@@ -9,7 +9,7 @@ MakaTalk is an iPad app that uses Makaton sign language in order to assess the m
 Currently the forms tend to be filled out by the patient's parents and thus don't accurately represent the views of the young person. Using the app allows the clinician to get instant feedback about the mental health status of the patient, so that the therapy session is more tailored to their needs.
 
 ## How?
-An app that collects patient feedback on their week and their therapy session, which utilises a more familiat questioning format, i.e. Makaton videos, and more accessible representations of patient's emotional status
+An app that collects patient feedback on their week and their therapy session, which utilises a more familiar questioning format, i.e. Makaton videos, and more accessible representations of patient's emotional status
 
 
 ## User Journey
