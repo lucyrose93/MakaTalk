@@ -20,7 +20,7 @@ server.register(require('inert'), (err) => {
         method: 'GET',
         path: '/hello',
         handler: function (request, reply) {
-            reply.file('../public/index.html');
+            reply.file('./public/index.html');
         }
     });
 });
