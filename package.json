@@ -1,0 +1,25 @@
+{
+  "name": "makatalk",
+  "version": "1.0.0",
+  "description": "In collaboration with Brent Child and Family Clinic, and the Anna Freud National Centre for Children and Families.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.0.0-rc.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucyrose93/MakaTalk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucyrose93/MakaTalk/issues"
+  },
+  "homepage": "https://github.com/lucyrose93/MakaTalk#readme"
+}
