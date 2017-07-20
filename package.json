@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "In collaboration with Brent Child and Family Clinic, and the Anna Freud National Centre for Children and Families.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.0.10"
+  },
   "devDependencies": {
     "hapi": "^16.4.3",
     "inert": "^4.2.0",
+    "pre-commit": "^1.2.2",
     "standard": "^10.0.2",
     "vision": "^4.1.1"
   },

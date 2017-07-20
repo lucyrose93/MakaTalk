@@ -3,7 +3,7 @@ module.exports = {
   path: '/pre-session/{file*}',
   handler: {
     directory: {
-      path: 'public/html/pre-session',
-    },
-  },
-};
+      path: 'public/html/pre-session'
+    }
+  }
+}
