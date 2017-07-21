@@ -1,6 +1,14 @@
+/*remove default styles*/
+
 * {
   margin: 0;
 }
+
+.fill-screen-height {
+  height: 100vh;
+}
+
+/* nav styles */
 
 nav {
   border-bottom: solid black .1em;
@@ -17,4 +25,14 @@ nav li {
 
 .back-icon {
   height: 1em;
+}
+
+/*style all dialogue boxes*/
+
+.dialogue-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 600px;
 }
