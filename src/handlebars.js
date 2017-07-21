@@ -4,7 +4,7 @@ module.exports = {
   engines: {
     hbs: handlebars
   },
-  path: 'views/pages',
+  path: 'views',
   relativeTo: __dirname,
   layout: 'default',
   layoutPath: 'views/layout',
