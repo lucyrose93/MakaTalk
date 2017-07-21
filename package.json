@@ -9,6 +9,7 @@
   "devDependencies": {
     "hapi": "^16.4.3",
     "inert": "^4.2.0",
+    "path": "^0.12.7",
     "pre-commit": "^1.2.2",
     "standard": "^10.0.2",
     "vision": "^4.1.1"
@@ -30,5 +31,5 @@
   "bugs": {
     "url": "https://github.com/lucyrose93/MakaTalk/issues"
   },
-  "homepage": "https://github.com/lucyrose93/MakaTalk#readme"
+  "familypage": "https://github.com/lucyrose93/MakaTalk#readme"
 }

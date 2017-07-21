@@ -1,7 +1,7 @@
 module.exports = {
   method: 'GET',
-  path: '/friends',
+  path: '/instructions',
   handler: function (request, reply) {
-    reply.view('friends')
+    reply.view('instructions')
   }
 }

@@ -1,6 +1,7 @@
 const hapi = require('hapi')
 const inert = require('inert')
 const vision = require('vision')
+const handlebars = require('./handlebars.js')
 
 const routes = require('./routes')
 
@@ -12,6 +13,7 @@ server.connection({
 
 server.register([inert, vision], (err) => {
   if (err) throw err
+  server.views(handlebars)
   server.route(routes)
 })
 
