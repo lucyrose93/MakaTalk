@@ -36,7 +36,7 @@ As a patient, I want to be able to express what is troubling me so that I can ge
 | As a clinician, I would like to be able to edit users' details, so that all their details are up to date | edit-user |
 | As a clinician, I would like to make how to use the app as clear as possible, so that that service users can use the app as independently as possible | user-interface |
 | As a clinician, I would like to give users the ability to replay Makaton answer options, so that they are able to play again the ones they missed or didn't fully understand | replay-videos |
-| As a clinician, I would like to prompt the service user to return the device to whomever handed it to them, so that they know what to do once they've finished the survey| handover-message |
+| As a clinician, I would like to prompt the service user to return the device to wfamilyver handed it to them, so that they know what to do once they've finished the survey| handover-message |
 | As a clinician, I would like to have to login again before I see any patient results so that only the appropriate people can see this information | login-redirect |
 | As a clinician, I would like to have to login before I can initiate a new survey, so that I can keep track of my patients | login |
 | As a clinician, I would like to have a patient progress indicator, so that I can track my patients' progress | progress-chart |
