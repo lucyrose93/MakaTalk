@@ -3,7 +3,7 @@ module.exports = {
   path: '/{file*}',
   handler: {
     directory: {
-      path: 'public/html',
-    },
-  },
-};
+      path: 'public/html'
+    }
+  }
+}

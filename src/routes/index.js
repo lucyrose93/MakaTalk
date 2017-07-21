@@ -1,5 +1,5 @@
 module.exports = [
-  './post-session.js',
-  './pre-session.js',
+  // './post-session.js',
+  // './pre-session.js',
   './static.js'
-].map(require);
+].map(require)
