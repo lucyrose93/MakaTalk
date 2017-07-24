@@ -36,3 +36,16 @@ nav li {
   margin: auto;
   max-width: 600px;
 }
+.main-video {
+  border: solid black .5em;
+  background: silver;
+  height: 20em;
+  width: 35em;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 5em;
+}
+.video-caption {
+  text-align: center;
+  padding-top: 1em;
+}
