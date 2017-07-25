@@ -5,7 +5,7 @@
 }
 
 .fill-screen-height {
-  height: 100vh;
+  height: 80vh;
 }
 
 /* nav styles */
@@ -33,14 +33,21 @@ nav li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: auto;
   max-width: 600px;
+  border: solid black .2em;
 }
-.main-video {
+/*placeholder styles are temp*/
+.placeholder-video {
   border: solid black .5em;
   background: silver;
+  height: 100%;
+}
+.main-video {
   height: 20em;
-  width: 35em;
+  width: 36em;
   max-width: 960px;
   margin: auto;
   margin-top: 5em;
@@ -48,4 +55,28 @@ nav li {
 .video-caption {
   text-align: center;
   padding-top: 1em;
+}
+.videos-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 2em;
+}
+.five-videos {
+  height: 5em;
+  width: 15%;
+}
+.three-videos {
+  height: 9em;
+  width: 25%;
+}
+.two-videos {
+  height: 14em;
+  width: 45%;
+}
+button {
+  background: silver;
+  width: 10em;
 }
