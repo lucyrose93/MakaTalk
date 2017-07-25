@@ -13,9 +13,16 @@
 nav {
   border-bottom: solid black .1em;
   background: silver;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1em;
 }
 
@@ -30,17 +37,27 @@ nav li {
 /*style all dialogue boxes*/
 
 .dialogue-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
   max-width: 600px;
 }
-.main-video {
+/*placeholder styles are temp*/
+.placeholder-video {
   border: solid black .5em;
   background: silver;
+}
+.main-video {
   height: 20em;
-  width: 35em;
+  width: 36em;
   max-width: 960px;
   margin: auto;
   margin-top: 5em;
@@ -48,4 +65,31 @@ nav li {
 .video-caption {
   text-align: center;
   padding-top: 1em;
+}
+.videos-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 2em;
+}
+.five-videos {
+  height: 5em;
+  width: 15%;
+}
+.three-videos {
+  height: 9em;
+  width: 25%;
+}
+.two-videos {
+  height: 14em;
+  width: 45%;
 }
