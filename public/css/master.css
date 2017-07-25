@@ -5,7 +5,7 @@
 }
 
 .fill-screen-height {
-  height: 100vh;
+  height: 80vh;
 }
 
 /* nav styles */
@@ -33,8 +33,11 @@ nav li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: auto;
   max-width: 600px;
+  border: solid black .2em;
 }
 /*placeholder styles are temp*/
 .placeholder-video {
@@ -72,4 +75,8 @@ nav li {
 .two-videos {
   height: 14em;
   width: 45%;
+}
+button {
+  background: silver;
+  width: 10em;
 }
