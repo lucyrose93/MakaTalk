@@ -54,6 +54,7 @@ nav li {
 .placeholder-video {
   border: solid black .5em;
   background: silver;
+  height: 100%;
 }
 .main-video {
   height: 20em;
