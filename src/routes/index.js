@@ -15,7 +15,6 @@ module.exports = [
   './like',
   './come-again',
   './thank-you',
-  './return-tablet',
   './submit-survey',
   './login',
   './results',
