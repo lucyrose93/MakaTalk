@@ -2,10 +2,12 @@
 
 * {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: .1em;
 }
 
 .fill-screen-height {
-  height: 100vh;
+  height: 80vh;
 }
 
 /* nav styles */
@@ -23,15 +25,19 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  padding: 1em 2em 1em 2em;
 }
 
 nav li {
   list-style: none;
+  font-size: 1.5em;
 }
 
-.back-icon {
-  height: 1em;
+.makatalk-logo {
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: .2em;
+  font-size: 2em;
+  font-weight: bolder;
 }
 
 /*style all dialogue boxes*/
@@ -59,13 +65,12 @@ nav li {
 .main-video {
   height: 20em;
   width: 36em;
-  max-width: 960px;
-  margin: auto;
-  margin-top: 5em;
+  margin: 3em auto 0em;
 }
 .video-caption {
   text-align: center;
   padding-top: 1em;
+  font-size: 1.5em;
 }
 .videos-container {
   display: -webkit-box;
@@ -93,4 +98,7 @@ nav li {
 .two-videos {
   height: 14em;
   width: 45%;
+}
+.select-survey-heading {
+  text-align: center;
 }
