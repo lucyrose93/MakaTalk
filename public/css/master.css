@@ -1,13 +1,13 @@
 /*remove default styles*/
 
 * {
-  margin: 0 auto;
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: .1em;
 }
 
 .fill-screen-height {
-  height: 100vh;
+  height: 80vh;
 }
 
 /* nav styles */
@@ -25,7 +25,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em 0em 1em 0em;
+  padding: 1em 2em 1em 2em;
 }
 
 nav li {
@@ -36,7 +36,7 @@ nav li {
 .makatalk-logo {
   font-family: 'Amatic SC', cursive;
   letter-spacing: .2em;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bolder;
 }
 
@@ -65,7 +65,7 @@ nav li {
 .main-video {
   height: 20em;
   width: 36em;
-  margin-top: 3em;
+  margin: 3em auto 0em;
 }
 .video-caption {
   text-align: center;
