@@ -1,84 +1,86 @@
 /* global: location, sessionStorage */
 
 (function collectAnswers () {
+
+  var path = location.pathname.slice(1)
   // select survey type
-  if (location.pathname === '/select-survey') {
+  if (path === 'select-survey') {
     var preSession = document.getElementById('pre-session-button')
     preSession.addEventListener('click', function () {
-      sessionStorage.setItem('survey', 'pre-session')
+      sessionStorage.setItem(path, 'pre-session')
     })
 
     var postSession = document.getElementById('post-session-button')
     postSession.addEventListener('click', function () {
-      sessionStorage.setItem('survey', 'post-session')
+      sessionStorage.setItem(path, 'post-session')
     })
   }
 
   // obtain consent
-  if (location.pathname === '/consent') {
+  if (path === 'consent') {
     var yes = document.getElementById('yes')
     yes.addEventListener('click', function () {
-      sessionStorage.setItem('consent', 'yes')
+      sessionStorage.setItem(path, 'yes')
     })
 
     var no = document.getElementById('no')
     no.addEventListener('click', function () {
-      sessionStorage.setItem('consent', 'no')
+      sessionStorage.setItem(path, 'no')
     })
   }
 
   // pre-session responses
-  if (location.pathname === '/today' ||
-    location.pathname === '/last-week' ||
-    location.pathname === '/home' ||
-    location.pathname === '/friends' ||
-    location.pathname === '/school' ||
-    location.pathname === '/play' ||
-    location.pathname === 'next-week') {
+  if (path === 'today' ||
+    path === 'last-week' ||
+    path === 'home' ||
+    path === 'friends' ||
+    path === 'school' ||
+    path === 'play' ||
+    path === 'next-week') {
     var veryGood = document.getElementById('very-good')
     veryGood.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'very good')
+      sessionStorage.setItem(path, 'very good')
     })
 
     var good = document.getElementById('good')
     good.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'good')
+      sessionStorage.setItem(path, 'good')
     })
 
     var ok = document.getElementById('ok')
     ok.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'ok')
+      sessionStorage.setItem(path, 'ok')
     })
 
     var bad = document.getElementById('bad')
     bad.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'bad')
+      sessionStorage.setItem(path, 'bad')
     })
 
     var veryBad = document.getElementById('very-bad')
     veryBad.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'very bad')
+      sessionStorage.setItem(path, 'very bad')
     })
   }
 
   // post-session responses
-  if (location.pathname === '/listen' ||
-    location.pathname === '/like' ||
-    location.pathname === '/help' ||
-    location.pathname === '/come-again') {
+  if (path === 'listen' ||
+    path === 'like' ||
+    path === 'help' ||
+    path === 'come-again') {
     var yes = document.getElementById('yes')
     yes.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'yes')
+      sessionStorage.setItem(path, 'yes')
     })
 
     var no = document.getElementById('no')
     no.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'no')
+      sessionStorage.setItem(path, 'no')
     })
 
     var maybe = document.getElementById('maybe')
     maybe.addEventListener('click', function () {
-      sessionStorage.setItem((location.pathname).slice(1), 'maybe')
+      sessionStorage.setItem(path, 'maybe')
     })
   }
 })()
