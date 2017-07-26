@@ -1,5 +1,6 @@
-(function collectAnswers () {
+/* global: location, sessionStorage */
 
+(function collectAnswers () {
   // select survey type
   if (location.pathname === '/select-survey') {
     var preSession = document.getElementById('pre-session-button')
