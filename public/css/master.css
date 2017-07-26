@@ -1,7 +1,7 @@
 /*remove default styles*/
 
 * {
-  margin: 0;
+  margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: .1em;
 }
@@ -25,7 +25,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5em 1em 0.5em 1em;
+  padding: 1em 0em 1em 0em;
 }
 
 nav li {
@@ -65,13 +65,12 @@ nav li {
 .main-video {
   height: 20em;
   width: 36em;
-  max-width: 960px;
-  margin: auto;
-  margin-top: 5em;
+  margin-top: 3em;
 }
 .video-caption {
   text-align: center;
   padding-top: 1em;
+  font-size: 1.5em;
 }
 .videos-container {
   display: -webkit-box;
