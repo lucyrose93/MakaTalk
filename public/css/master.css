@@ -2,6 +2,8 @@
 
 * {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: .1em;
 }
 
 .fill-screen-height {
@@ -23,15 +25,19 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 nav li {
   list-style: none;
+  font-size: 1.5em;
 }
 
-.back-icon {
-  height: 1em;
+.makatalk-logo {
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: .2em;
+  font-size: 3em;
+  font-weight: bolder;
 }
 
 /*style all dialogue boxes*/
@@ -93,4 +99,7 @@ nav li {
 .two-videos {
   height: 14em;
   width: 45%;
+}
+.select-survey-heading {
+  text-align: center;
 }
