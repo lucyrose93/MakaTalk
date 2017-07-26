@@ -3,6 +3,7 @@
 (function collectAnswers () {
 
   var path = location.pathname.slice(1)
+
   // select survey type
   if (path === 'select-survey') {
     var preSession = document.getElementById('pre-session-button')
@@ -18,13 +19,13 @@
 
   // obtain consent
   if (path === 'consent') {
-    var yes = document.getElementById('yes')
-    yes.addEventListener('click', function () {
+    var yesConsent = document.getElementById('yes')
+    yesConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'yes')
     })
 
-    var no = document.getElementById('no')
-    no.addEventListener('click', function () {
+    var noConsent = document.getElementById('no')
+    noConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'no')
     })
   }
