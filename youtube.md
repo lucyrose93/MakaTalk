@@ -4,8 +4,8 @@ Give back the tablet
 To hear this again
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ku3LrbO6NHw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-Intro
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bGIhghnseYk?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+Consent
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bGIhghnseYk?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 Well done. Thank you.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DLle35EQWSY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -68,5 +68,5 @@ Help Today
 Like Today
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z-dSUBbkQHo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-Understand youtube
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RenIsHB-XGc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+Understand
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RenIsHB-XGc?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>

@@ -10,7 +10,7 @@ module.exports = [
   './school',
   './play',
   './next-week',
-  './listen',
+  './understand',
   './help',
   './like',
   './come-again',
