@@ -1,7 +1,7 @@
 /*remove default styles*/
 
 * {
-  margin: 0;
+  margin: 0em;
 }
 
 .fill-screen-height {
@@ -50,12 +50,6 @@ nav li {
   margin: auto;
   max-width: 600px;
 }
-/*placeholder styles are temp*/
-.placeholder-video {
-  border: solid black .5em;
-  background: silver;
-  height: 100%;
-}
 .main-video {
   height: 20em;
   width: 36em;
@@ -67,7 +61,7 @@ nav li {
   text-align: center;
   padding-top: 1em;
 }
-.videos-container {
+/*.videos-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,13 +72,28 @@ nav li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 960px;
+  max-width: 500px;
   margin: auto;
   margin-top: 2em;
+}*/
+.videos-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 4em auto 0em;
+  -ms-flex-pack: distribute;
+      justify-content: center;
 }
-.five-videos {
-  height: 5em;
-  width: 15%;
+.video-thumbnail {
+  margin: 0em .5em;
+  height: auto;
+}
+/*.five-videos {
+  margin-right: 1em;
 }
 .three-videos {
   height: 9em;
@@ -93,4 +102,4 @@ nav li {
 .two-videos {
   height: 14em;
   width: 45%;
-}
+}*/
