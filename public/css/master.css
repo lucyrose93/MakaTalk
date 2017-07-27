@@ -2,17 +2,14 @@
 
 * {
   margin: 0;
+  background: #5144af;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
 }
-
-.fill-screen-height {
-  height: 100vh;
-}
-
 /* nav styles */
-
 nav {
-  border-bottom: solid black .1em;
-  background: silver;
+  border-bottom: solid white .1em;
+  background: #6b5da4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,17 +20,18 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  padding: 1em 2em;;
 }
 
 nav li {
   list-style: none;
+  background: inherit;
+  font-size: 1.5em;
 }
-
-.back-icon {
-  height: 1em;
+.makatalk-logo {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3em;
 }
-
 /*style all dialogue boxes*/
 
 .dialogue-box {
@@ -48,7 +46,34 @@ nav li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  max-width: 600px;
+  max-width: 400px;
+  background: white;
+  color: #5144af;
+  border-radius: .5em;
+  margin-top: 6em;
+  text-align: center;
+  padding: 2em;
+}
+.dialogue-box-heading {
+  background: inherit;
+  color: #5144af;
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+.dialogue-box-input {
+  background: inherit;
+  border: solid #5144af .1em;
+  border-radius: .5em;
+  margin: auto;
+  width: 100%;
+  font-size: 1.5em;
+}
+.dialogue-box-text {
+  background: inherit;
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #5144af;
 }
 /*placeholder styles are temp*/
 .placeholder-video {
@@ -78,7 +103,7 @@ nav li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 960px;
+  max-width: 600px;
   margin: auto;
   margin-top: 2em;
 }
@@ -93,4 +118,23 @@ nav li {
 .two-videos {
   height: 14em;
   width: 45%;
+}
+.select-survey-button {
+  border-style: none;
+  border-radius: .5em;
+  width: 75%;
+  margin: auto;
+  font-size: 2em;
+}
+#post-session-button {
+  margin-top: 1em;
+  background: #d90368;
+}
+#confirm-survey-button {
+  background: #d90368;
+}
+#submit-survey-button {
+  margin-top: 1em;
+  background: #d90368;
+  width: 100%;
 }
