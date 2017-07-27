@@ -95,7 +95,7 @@ nav li {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
           flex-direction: row;
-  margin: 4em auto 0em;
+  margin: 6em auto 0em;
   -ms-flex-pack: distribute;
       justify-content: center;
 }
