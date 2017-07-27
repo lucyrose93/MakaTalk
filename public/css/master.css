@@ -4,17 +4,14 @@
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: .1em;
-}
-
-.fill-screen-height {
-  height: 80vh;
+  background: #5144af;
+  color: white;
 }
 
 /* nav styles */
 
 nav {
-  border-bottom: solid black .1em;
-  background: silver;
+  border-bottom: solid white .1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +33,7 @@ nav li {
 .makatalk-logo {
   font-family: 'Amatic SC', cursive;
   letter-spacing: .2em;
-  font-size: 2em;
+  font-size: 4em;
   font-weight: bolder;
 }
 
@@ -54,7 +51,11 @@ nav li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  max-width: 600px;
+  max-width: 400px;
+  background: white;
+  padding: 2em;
+  margin-top: 7em;
+  border-radius: 1em;
 }
 /*placeholder styles are temp*/
 .placeholder-video {
@@ -101,4 +102,31 @@ nav li {
 }
 .select-survey-heading {
   text-align: center;
+  background: inherit;
+  color: #5144af;
+}
+.dialogue-box-button, .login-input {
+  border: none;
+  width: 70%;
+  margin: auto;
+  font-size: 1.5em;
+  padding: .5em;
+  border-radius: .5em;
+}
+.login-input {
+HHHHH
+}
+#confirm-button {
+  background: #d90368;
+}
+#pre-session-button {
+  background: #5144af;
+}
+#post-session-button {
+  background: #d90368;
+  margin-top: 1em;
+}
+#login-button {
+  background: #d90368;
+  margin-top: 1em;
 }

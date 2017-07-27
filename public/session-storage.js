@@ -1,7 +1,6 @@
 /* global: location, sessionStorage */
 
 (function collectAnswers () {
-
   var path = location.pathname.slice(1)
 
   // select survey type
@@ -19,7 +18,6 @@
 
   // obtain consent
   if (path === 'consent') {
-
     var yesConsent = document.getElementById('yes-consent')
     yesConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'yes')
