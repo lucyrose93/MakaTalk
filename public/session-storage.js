@@ -19,12 +19,13 @@
 
   // obtain consent
   if (path === 'consent') {
-    var yesConsent = document.getElementById('yes')
+
+    var yesConsent = document.getElementById('yes-consent')
     yesConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'yes')
     })
 
-    var noConsent = document.getElementById('no')
+    var noConsent = document.getElementById('no-consent')
     noConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'no')
     })
@@ -69,12 +70,12 @@
     path === 'like' ||
     path === 'help' ||
     path === 'come-again') {
-    var yes = document.getElementById('yes')
+    var yes = document.getElementById('yes-agree')
     yes.addEventListener('click', function () {
       sessionStorage.setItem(path, 'yes')
     })
 
-    var no = document.getElementById('no')
+    var no = document.getElementById('no-disagree')
     no.addEventListener('click', function () {
       sessionStorage.setItem(path, 'no')
     })
