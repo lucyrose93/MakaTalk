@@ -107,14 +107,14 @@ nav li {
 }
 .dialogue-box-button, .login-input {
   border: none;
-  width: 70%;
   margin: auto;
   font-size: 1.5em;
-  padding: .5em;
   border-radius: .5em;
 }
 .login-input {
-HHHHH
+  background: inherit;
+  border: solid #5144af .1em;
+  width: 70%;
 }
 #confirm-button {
   background: #d90368;
@@ -129,4 +129,5 @@ HHHHH
 #login-button {
   background: #d90368;
   margin-top: 1em;
+  width: 70%;
 }
