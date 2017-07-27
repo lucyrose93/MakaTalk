@@ -39,27 +39,27 @@
     path === 'school' ||
     path === 'play' ||
     path === 'next-week') {
-    var veryGood = document.getElementById('very-good')
+    var veryGood = document.getElementById('very-good-option')
     veryGood.addEventListener('click', function () {
       sessionStorage.setItem(path, 'very good')
     })
 
-    var good = document.getElementById('good')
+    var good = document.getElementById('good-option')
     good.addEventListener('click', function () {
       sessionStorage.setItem(path, 'good')
     })
 
-    var ok = document.getElementById('ok')
+    var ok = document.getElementById('ok-option')
     ok.addEventListener('click', function () {
       sessionStorage.setItem(path, 'ok')
     })
 
-    var bad = document.getElementById('bad')
+    var bad = document.getElementById('bad-option')
     bad.addEventListener('click', function () {
       sessionStorage.setItem(path, 'bad')
     })
 
-    var veryBad = document.getElementById('very-bad')
+    var veryBad = document.getElementById('very-bad-option')
     veryBad.addEventListener('click', function () {
       sessionStorage.setItem(path, 'very bad')
     })
