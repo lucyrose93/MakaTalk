@@ -2,17 +2,15 @@
 
 * {
   margin: 0em;
+  margin: 0;
+  background: #5144af;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
 }
-
-.fill-screen-height {
-  height: 100vh;
-}
-
 /* nav styles */
-
 nav {
-  border-bottom: solid black .1em;
-  background: silver;
+  border-bottom: solid white .1em;
+  background: #6b5da4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,17 +21,18 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  padding: 1em 2em;;
 }
 
 nav li {
   list-style: none;
+  background: inherit;
+  font-size: 1.5em;
 }
-
-.back-icon {
-  height: 1em;
+.makatalk-logo {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3em;
 }
-
 /*style all dialogue boxes*/
 
 .dialogue-box {
@@ -48,7 +47,34 @@ nav li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  max-width: 600px;
+  max-width: 400px;
+  background: white;
+  color: #5144af;
+  border-radius: .5em;
+  margin-top: 6em;
+  text-align: center;
+  padding: 2em;
+}
+.dialogue-box-heading {
+  background: inherit;
+  color: #5144af;
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+.dialogue-box-input {
+  background: inherit;
+  border: solid #5144af .1em;
+  border-radius: .5em;
+  margin: auto;
+  width: 100%;
+  font-size: 1.5em;
+}
+.dialogue-box-text {
+  background: inherit;
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #5144af;
 }
 .main-video {
   height: 20em;
@@ -61,21 +87,6 @@ nav li {
   text-align: center;
   padding-top: 1em;
 }
-/*.videos-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 500px;
-  margin: auto;
-  margin-top: 2em;
-}*/
 .videos-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,14 +103,22 @@ nav li {
   margin: 0em .5em;
   height: auto;
 }
-/*.five-videos {
-  margin-right: 1em;
+.select-survey-button {
+  border-style: none;
+  border-radius: .5em;
+  width: 75%;
+  margin: auto;
+  font-size: 2em;
 }
-.three-videos {
-  height: 9em;
-  width: 25%;
+#post-session-button {
+  margin-top: 1em;
+  background: #d90368;
 }
-.two-videos {
-  height: 14em;
-  width: 45%;
-}*/
+#confirm-survey-button {
+  background: #d90368;
+}
+#submit-survey-button {
+  margin-top: 1em;
+  background: #d90368;
+  width: 100%;
+}
