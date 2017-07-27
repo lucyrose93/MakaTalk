@@ -1,6 +1,7 @@
 /*remove default styles*/
 
 * {
+  margin: 0em;
   margin: 0;
   background: #5144af;
   color: white;
@@ -75,12 +76,6 @@ nav li {
   line-height: 2em;
   color: #5144af;
 }
-/*placeholder styles are temp*/
-.placeholder-video {
-  border: solid black .5em;
-  background: silver;
-  height: 100%;
-}
 .main-video {
   height: 20em;
   width: 36em;
@@ -98,26 +93,15 @@ nav li {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
+  -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 600px;
-  margin: auto;
-  margin-top: 2em;
+  margin: 6em auto 0em;
+  -ms-flex-pack: distribute;
+      justify-content: center;
 }
-.five-videos {
-  height: 5em;
-  width: 15%;
-}
-.three-videos {
-  height: 9em;
-  width: 25%;
-}
-.two-videos {
-  height: 14em;
-  width: 45%;
+.video-thumbnail {
+  margin: 0em .5em;
+  height: auto;
 }
 .select-survey-button {
   border-style: none;
