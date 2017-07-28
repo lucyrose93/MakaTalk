@@ -1,23 +1,22 @@
 function changePage () {
   var currentPage = location.pathname.slice(1)
-  var survey = sessionStorage.getItem('select-survey');
-  console.log(currentPage)
+  var survey = sessionStorage.getItem('select-survey')
   switch (currentPage) {
-    case 'select-survey': window.location.pathname = "/confirm-survey";
+    case 'select-survey': window.location.pathname = "/confirm-survey"
       break
-    case 'confirm-survey': window.location.pathname = "/consent";
+    case 'confirm-survey': window.location.pathname = "/consent"
       break
     case 'consent': {
         if (survey==='pre-session') {
           window.location.pathname = "/today"
         } else {
-          window.location.pathname = "/understand";
+          window.location.pathname = "/understand"
         }
     };
       break
-    case 'understand': window.location.pathname = "/help";
+    case 'understand': window.location.pathname = "/help"
       break
-    case 'help': window.location.pathname = "/like";
+    case 'help': window.location.pathname = "/like"
       break
     case 'like': window.location.pathname = "/come-again"
       break
@@ -25,9 +24,9 @@ function changePage () {
         break
     case 'submit-survey': window.location.pathname = "/login"
         break
-    case 'today': window.location.pathname = "/last-week";
+    case 'today': window.location.pathname = "/last-week"
         break
-    case 'last-week': window.location.pathname = "family";
+    case 'last-week': window.location.pathname = "family"
         break
     case 'family': window.location.pathname = "/friends"
         break
