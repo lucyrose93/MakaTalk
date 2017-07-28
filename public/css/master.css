@@ -138,3 +138,8 @@ nav li {
   background: #d90368;
   width: 100%;
 }
+#insert-survey {
+  background: inherit;
+  color: #009a7b;
+  text-decoration: underline;
+}
