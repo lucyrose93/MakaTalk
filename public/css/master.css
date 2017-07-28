@@ -1,10 +1,9 @@
 /*remove default styles*/
 
-* {
-  margin: 0em;
+body, html {
   margin: 0;
-  background: #5144af;
   color: white;
+  background: #5144af;
   font-family: 'Open Sans', sans-serif;
 }
 /* nav styles */
@@ -81,7 +80,7 @@ nav li {
   width: 36em;
   max-width: 960px;
   margin: auto;
-  margin-top: 5em;
+  padding-top: 5em;
 }
 .video-caption {
   text-align: center;
@@ -109,6 +108,10 @@ nav li {
   width: 75%;
   margin: auto;
   font-size: 2em;
+  color: white;
+}
+#pre-session-button {
+  background: #5144af;
 }
 #post-session-button {
   margin-top: 1em;
@@ -126,4 +129,20 @@ nav li {
   background: inherit;
   color: #009a7b;
   text-decoration: underline;
+}
+/*page wrappers*/
+#post-session-wrapper {
+  background: #94ede7;
+  color: #5144af;
+  margin: 0;
+  min-height: 100vh;
+}
+#pre-session-wrapper {
+    background: #94ed94;
+    color: #5144af;
+    min-height: 100vh;
+}
+#survey-intro-conclusion-wrapper {
+    background: #009a7b;
+    min-height: 100vh;
 }
