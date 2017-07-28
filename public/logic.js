@@ -44,6 +44,6 @@ function changePage () {
   }
 }
 
-document.querySelectorAll('figure.five-videos, figure.three-videos, figure.two-videos, button#confirm-survey, button#ok-submit-survey, button#pre-session-button, button#post-session-button').forEach((e, i) => {
+document.querySelectorAll('figure.five-videos, figure.three-videos, figure.two-videos, button#confirm-survey-button, button#ok-submit-survey, button#pre-session-button, button#post-session-button').forEach((e, i) => {
   e.addEventListener('click', changePage)
 })
