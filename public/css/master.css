@@ -32,6 +32,10 @@ nav li {
   font-family: 'Amatic SC', cursive;
   font-size: 3em;
 }
+.nav-arrow {
+  background: inherit;
+  height: 1.6em;
+}
 /*style all dialogue boxes*/
 
 .dialogue-box {
