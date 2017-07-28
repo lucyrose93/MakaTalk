@@ -140,5 +140,6 @@ nav li {
 }
 #insert-survey {
   background: inherit;
-  color: #6b5da4
+  color: #009a7b;
+  text-decoration: underline;
 }
