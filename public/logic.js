@@ -1,6 +1,7 @@
 function changePage () {
   var currentPage = location.pathname.slice(1)
   var survey = sessionStorage.getItem('select-survey');
+  console.log(currentPage)
   switch (currentPage) {
     case 'select-survey': window.location.pathname = "/confirm-survey";
       break
@@ -42,12 +43,6 @@ function changePage () {
           break
   }
 }
-
-// document.querySelectorAll('figure.three-videos').forEach((e, i) => {
-//   e.addEventListener('click', () => {
-//     console.log(`I am answer ${i + 1}`);
-//   });
-// });
 
 document.querySelectorAll('figure.five-videos, figure.three-videos, figure.two-videos, button#confirm-survey, button#ok-submit-survey, button#pre-session-button, button#post-session-button').forEach((e, i) => {
   e.addEventListener('click', changePage)
