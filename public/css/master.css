@@ -1,9 +1,9 @@
 /*remove default styles*/
 
-* {
+body, html {
   margin: 0;
-  background: #5144af;
   color: white;
+  background: #5144af;
   font-family: 'Open Sans', sans-serif;
 }
 /* nav styles */
@@ -31,6 +31,10 @@ nav li {
 .makatalk-logo {
   font-family: 'Amatic SC', cursive;
   font-size: 3em;
+}
+.nav-arrow {
+  background: inherit;
+  height: 1.6em;
 }
 /*style all dialogue boxes*/
 
@@ -75,18 +79,12 @@ nav li {
   line-height: 2em;
   color: #5144af;
 }
-/*placeholder styles are temp*/
-.placeholder-video {
-  border: solid black .5em;
-  background: silver;
-  height: 100%;
-}
 .main-video {
   height: 20em;
   width: 36em;
   max-width: 960px;
   margin: auto;
-  margin-top: 5em;
+  padding-top: 5em;
 }
 .video-caption {
   text-align: center;
@@ -98,26 +96,15 @@ nav li {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
+  -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 600px;
-  margin: auto;
-  margin-top: 2em;
+  margin: 6em auto 0em;
+  -ms-flex-pack: distribute;
+      justify-content: center;
 }
-.five-videos {
-  height: 5em;
-  width: 15%;
-}
-.three-videos {
-  height: 9em;
-  width: 25%;
-}
-.two-videos {
-  height: 14em;
-  width: 45%;
+.video-thumbnail {
+  margin: 0em .5em;
+  height: auto;
 }
 .select-survey-button {
   border-style: none;
@@ -125,6 +112,10 @@ nav li {
   width: 75%;
   margin: auto;
   font-size: 2em;
+  color: white;
+}
+#pre-session-button {
+  background: #5144af;
 }
 #post-session-button {
   margin-top: 1em;
@@ -142,4 +133,20 @@ nav li {
   background: inherit;
   color: #009a7b;
   text-decoration: underline;
+}
+/*page wrappers*/
+#post-session-wrapper {
+  background: #94ede7;
+  color: #5144af;
+  margin: 0;
+  min-height: 100vh;
+}
+#pre-session-wrapper {
+    background: #94ed94;
+    color: #5144af;
+    min-height: 100vh;
+}
+#survey-intro-conclusion-wrapper {
+    background: #009a7b;
+    min-height: 100vh;
 }
