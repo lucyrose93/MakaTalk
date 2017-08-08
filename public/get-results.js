@@ -16,6 +16,7 @@
 
       for (var i = 0; i < surveyQuestions.length; i++) {
         var currentQuestion = surveyQuestions[i].replace('-', ' ')
+        currentQuestion = currentQuestion.charAt(0).toUpperCase() + currentQuestion.slice(1)
         var logAnswer = sessionStorage.getItem(surveyQuestions[i])
         if (logAnswer) {
           var addResponse = document.createTextNode(currentQuestion + ': ' + logAnswer)
