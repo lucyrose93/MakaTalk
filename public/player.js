@@ -15,7 +15,7 @@
       width: '640',
       playerVars: {
         listType: 'playlist',
-        list: 'PLpPmZmHyOS_PQgT6nTB3WkUBl8zX47D3p',
+        list: playlist_id,
         controls: 0,
         showinfo: 0,
         rel: 0
@@ -32,16 +32,17 @@
     event.target.playVideo();
   }
 
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  var done = false;
   function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      setTimeout(stopVideo, 60000);
-      done = true;
+    if (event.data == YT.PlayerState.PLAYING) {
+      var currentIndex = player.getPlaylistIndex();
+      console.log('My index is ' + currentIndex);
+      switch(currentIndex) {
+    case 1:
+        document.getElementById("yes-consent").style.color = "#ff0000";
+        break;
+    case 2:
+        document.getElementById("no-consent").style.color = "blue";
+        break;
+      }
     }
-  }
-  function stopVideo() {
-    player.stopVideo();
   }
