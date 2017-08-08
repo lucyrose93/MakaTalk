@@ -7,12 +7,20 @@
       var surveyType = sessionStorage.getItem('select-survey')
 
         if (surveyType === 'pre-session') {
-          var preSessionResponses = ['consent', 'today', 'last-week', 'family', 'friends', 'school', 'play', 'next-week']
-          var preSessionAnswers = []
-            for (var i = 0; i < preSessionResponses.length; i++){
-              preSessionAnswers.push(sessionStorage.getItem(preSessionResponses[i]))
+          var preSessionQuestions = ['consent', 'today', 'last-week', 'family', 'friends', 'school', 'play', 'next-week']
+            for (var i = 0; i < preSessionQuestions.length; i++){
+              var logAnswer = sessionStorage.getItem(preSessionQuestions[i])
+                if (logAnswer) {
+                  var newPara = document.createElement('p')
+                  var addResponse = document.createTextNode(logAnswer)
+                  newPara.appendChild(addResponse)
+                  var div = document.getElementById('insert-answers')
+                  insertAnswers.appendChild(newPara)                  
+                }
+                else {
+                  document.createElement('p').appendChild(document.createTextNode('No answer'))
+                }
             }
-            insertAnswers.textContent = preSessionAnswers
         }
         else if (surveyType === 'post-session') {
           var postSessionResponses = ['consent', 'understand', 'help', 'like', 'come-again']
