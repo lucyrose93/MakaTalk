@@ -9,17 +9,19 @@
         if (surveyType === 'pre-session') {
           var preSessionQuestions = ['consent', 'today', 'last-week', 'family', 'friends', 'school', 'play', 'next-week']
             for (var i = 0; i < preSessionQuestions.length; i++){
+              var currentQuestion = preSessionQuestions[i]
               var logAnswer = sessionStorage.getItem(preSessionQuestions[i])
                 if (logAnswer) {
-                  var newPara = document.createElement('p')
-                  var addResponse = document.createTextNode(logAnswer)
-                  newPara.appendChild(addResponse)
-                  var div = document.getElementById('insert-answers')
-                  insertAnswers.appendChild(newPara)                  
+                  currentQuestion = currentQuestion.replace('-', ' ')
+                  var addResponse = document.createTextNode(currentQuestion + ': ' + logAnswer)
                 }
                 else {
-                  document.createElement('p').appendChild(document.createTextNode('No answer'))
+                  var addResponse = document.createTextNode(currentQuestion + ': no answer')
                 }
+                var newPara = document.createElement('p')
+                newPara.appendChild(addResponse)
+                var div = document.getElementById('insert-answers')
+                insertAnswers.appendChild(newPara)
             }
         }
         else if (surveyType === 'post-session') {
