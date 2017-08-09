@@ -3,16 +3,22 @@
 (function resultsPage() {
 
     var path = location.pathname.slice(1)
-    if (path === 'results') {
+
+    if (path === 'results' ) {
 
       var surveyType = sessionStorage.getItem('select-survey')
+
+      if (!surveyType) {
+        surveyType = 'No data available'
+      }
+
       document.getElementById('survey-type').textContent = surveyType
 
       if (surveyType === 'pre-session') {
         var surveyQuestions = ['consent', 'today', 'last-week', 'family', 'friends', 'school', 'play', 'next-week']
       } else if (surveyType === 'post-session') {
         var surveyQuestions = ['consent', 'understand', 'help', 'like', 'come-again']
-      }
+      } else surveyQuestions = []
 
       for (var i = 0; i < surveyQuestions.length; i++) {
         var currentQuestion = surveyQuestions[i].replace('-', ' ')
@@ -29,4 +35,4 @@
         insertAnswers.appendChild(newPara)
     }
   }
-})();
+})()
