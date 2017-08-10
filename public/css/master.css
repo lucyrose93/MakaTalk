@@ -55,7 +55,6 @@ nav li {
   color: #5144af;
   border-radius: .5em;
   margin-top: 6em;
-  text-align: center;
   padding: 2em;
 }
 .dialogue-box-heading {
@@ -135,7 +134,7 @@ nav li {
   text-decoration: underline;
 }
 #insert-answers {
-  text-align: left; 
+  text-align: left;
 }
 /*page wrappers*/
 #post-session-wrapper {
