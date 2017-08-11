@@ -20,7 +20,6 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em 2em;;
 }
 
 nav li {
@@ -36,8 +35,6 @@ nav li {
   background: inherit;
   height: 1.6em;
 }
-/*style all dialogue boxes*/
-
 .dialogue-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,7 +53,6 @@ nav li {
   border-radius: .5em;
   margin-top: 6em;
   text-align: center;
-  padding: 2em;
 }
 .dialogue-box-heading {
   background: inherit;
@@ -83,28 +79,36 @@ nav li {
   height: 20em;
   width: 36em;
   max-width: 960px;
-  margin: auto;
-  padding-top: 5em;
+  margin: 2em auto;
 }
-.video-caption {
+.thumbnail-caption {
   text-align: center;
-  padding-top: 1em;
 }
-.videos-container {
+.thumbnail-options {
+  width: 900px;
+  margin: 1em auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
+      -ms-flex-direction: row;
           flex-direction: row;
-  margin: 6em auto 0em;
   -ms-flex-pack: distribute;
-      justify-content: center;
+      justify-content: space-around;
 }
-.video-thumbnail {
-  margin: 0em .5em;
+.thumbnail-options figure {
+  display: inline-block;
+  margin: 1em;
+  padding: 0;
   height: auto;
+  width: 100%;
+}
+.two-options figure {
+  margin: 6em;
+}
+.img-options {
+  width: 100%;
 }
 .select-survey-button {
   border-style: none;
@@ -135,21 +139,5 @@ nav li {
   text-decoration: underline;
 }
 #insert-answers {
-  text-align: left; 
-}
-/*page wrappers*/
-#post-session-wrapper {
-  background: #94ede7;
-  color: #5144af;
-  margin: 0;
-  min-height: 100vh;
-}
-#pre-session-wrapper {
-    background: #94ed94;
-    color: #5144af;
-    min-height: 100vh;
-}
-#survey-intro-conclusion-wrapper {
-    background: #009a7b;
-    min-height: 100vh;
+  text-align: left;
 }
