@@ -8,6 +8,9 @@
     var clinicianEmailInput = document.getElementById('clinician-email-input')
     submitSurveyButton.addEventListener('click', function() {
       var storeClinicianEmail = sessionStorage.setItem('clinician-email', clinicianEmailInput.value)
+
+
+      //SORT THIS!
     })
   }
 
