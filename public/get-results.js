@@ -7,7 +7,7 @@
     if (path === 'results' ) {
 
       var surveyType = sessionStorage.getItem('select-survey')
-
+      console.log(surveyType)
       if (!surveyType) {
         surveyType = 'No data available'
       }
