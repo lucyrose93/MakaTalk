@@ -13,13 +13,13 @@
 
   if (path === "results") {
     var sendResultsButton = document.getElementById('send-results-button')
-    var getSessionStorage = window.sessionStorage
-    var getClinicianEmail = getSessionStorage['clinician-email']
-    var emailSubject = getSessionStorage['select-survey'] + ' results ' + Date()
-    var emailBody = JSON.stringify(getSessionStorage)
+    var sessionStorage = window.sessionStorage
+    var clinicianEmail = sessionStorage['clinician-email']
+    var emailSubject = sessionStorage['select-survey'] + ' results ' + Date()
+    var emailBody = JSON.stringify(sessionStorage)
     emailBody = emailBody.replace(/[{}"]/g, ' ').slice(emailBody.indexOf(",") + 2, emailBody.lastIndexOf(","))
 
-    var mailToClinicianURL = 'mailto:' + getClinicianEmail + '?subject=' + emailSubject + '&body=' + emailBody
+    var mailToClinicianURL = 'mailto:' + clinicianEmail + '?subject=' + emailSubject + '&body=' + emailBody
 
     sendResultsButton.href = mailToClinicianURL
   }
