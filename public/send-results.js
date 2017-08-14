@@ -2,15 +2,11 @@
 
 (function() {
   var path = location.pathname.slice(1)
-
   if (path === "login") {
     var submitSurveyButton = document.getElementById('submit-survey-button')
-    var clinicianEmailInput = document.getElementById('clinician-email-input')
     submitSurveyButton.addEventListener('click', function() {
-      var storeClinicianEmail = sessionStorage.setItem('clinician-email', clinicianEmailInput.value)
-
-
-      //SORT THIS!
+      var clinicianEmail = document.getElementById('clinician-email-input').value
+      window.sessionStorage.setItem('clinician-email', clinicianEmail)
     })
   }
 
