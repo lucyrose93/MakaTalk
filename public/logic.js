@@ -44,6 +44,5 @@ function changePage () {
 }
 
 document.querySelectorAll('figure.five-videos, figure.three-videos, figure.two-videos, button#confirm-survey-button, button#ok-submit-survey, button#pre-session-button, button#post-session-button').forEach((e, i) => {
-  console.log('I have reached this line')
   e.addEventListener('click', changePage)
 })
