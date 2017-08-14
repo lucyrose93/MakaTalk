@@ -1,7 +1,10 @@
-/* global: sessionStorage */
+/* global: location, sessionStorage */
 
 (function confirmSurvey () {
-  var surveySelected = sessionStorage.getItem('select-survey')
-  var insertSurvey = document.getElementById('insert-survey')
-  insertSurvey.innerHTML = surveySelected
+  var path = location.pathname.slice(1)
+  if (path === "confirm-survey"){
+    var surveySelected = sessionStorage.getItem('select-survey')
+    var insertSurvey = document.getElementById('insert-survey')
+    insertSurvey.textContent = surveySelected
+  }
 })()
