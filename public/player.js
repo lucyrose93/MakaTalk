@@ -5,8 +5,7 @@
   var firstScriptTag = document.getElementsByTagName('script')[0]
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
-  /* Create an <iframe> (and YouTube player)
-     after the API request is completed. */
+  /* Create an <iframe> (and YouTube player) after the API request is completed. */
   var player
 
   function onYouTubeIframeAPIReady() {
@@ -92,7 +91,8 @@
 
       if (path === 'help' ||
         path === 'like' ||
-        path === 'understand') {
+        path === 'understand' ||
+        path === 'come-again') {
         var yesAgree = document.getElementById('yes-agree')
         var noDisagree = document.getElementById('no-disagree')
         var maybe = document.getElementById('maybe')
