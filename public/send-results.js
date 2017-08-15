@@ -34,6 +34,6 @@
 
     var sendResultsButton = document.getElementById('send-results-button')
 
-    sendResultsButton.href = "www.example.com"
+    sendResultsButton.href = "mailto:lucy.rose.sabin@gmail.com"
   }
 })()
