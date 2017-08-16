@@ -110,7 +110,7 @@ nav li {
 .img-options {
   width: 100%;
 }
-.select-survey-button {
+.select-survey-button, #submit-survey-button {
   border-style: none;
   border-radius: .5em;
   width: 75%;
