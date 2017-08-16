@@ -45,10 +45,19 @@
     })
   }
 
-  if (path==='submit-survey'){
-    var okSubmit = document.getElementById('ok-submit-survey')
+  if (path==='thank-you'){
+    var okSubmit = document.getElementById('submit-survey-button')
     okSubmit.addEventListener('click', function(){
       window.location.pathname = '/login'
+    })
+  }
+
+  if (path==='login'){
+    var submitLoginDetails = document.getElementById('submit-login-button')
+    submitLoginDetails.addEventListener('click', function(){
+      var clinicianEmail = document.getElementById('clinician-email-input').value
+      sessionStorage.setItem('clinician-email', clinicianEmail)
+      window.location.pathname = '/results'
     })
   }
 
