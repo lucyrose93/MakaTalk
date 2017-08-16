@@ -52,6 +52,8 @@
       var path = location.pathname.slice(1)
 
       if (path === 'consent') {
+        var twoAnswers = [yesConsent, noConsent] = [document.getElementById('yes-consent'), document.getElementById('no-consent')]
+        console.log('Here are my 2 answers', twoAnswers) 
         var yesConsent = document.getElementById('yes-consent')
         var noConsent = document.getElementById('no-consent')
         switch (currentIndex) {
