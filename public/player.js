@@ -1,4 +1,4 @@
-(function() {
+(function playVideos() {
   // Load IFrame Player API code asynchronously.
   var tag = document.createElement('script')
   tag.src = 'https://www.youtube.com/iframe_api'
@@ -43,8 +43,12 @@
   }
 
   function onPlayerStateChange(event) {
+
+    var currentIndex = player.getPlaylistIndex()
+
+
     if (event.data == YT.PlayerState.PLAYING) {
-      var currentIndex = player.getPlaylistIndex()
+      // var currentIndex = player.getPlaylistIndex()
       var path = location.pathname.slice(1)
 
       if (path === 'consent') {
@@ -71,6 +75,7 @@
         var okOption = document.getElementById('ok-option')
         var badOption = document.getElementById('bad-option')
         var veryBadOption = document.getElementById('very-bad-option')
+
         switch (currentIndex) {
           case 1:
             toggleHighlight(veryGoodOption)
@@ -109,4 +114,4 @@
       }
     }
   }
-})();
+})()
