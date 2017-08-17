@@ -102,7 +102,7 @@
   }
 
   // post-session responses
-  if (path === 'listen' ||
+  if (path === 'understand' ||
     path === 'like' ||
     path === 'help' ||
     path === 'come-again') {
