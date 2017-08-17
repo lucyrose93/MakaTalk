@@ -134,7 +134,7 @@
             break
           case 'like': window.location.pathname = "/come-again"
             break
-          case 'come-again': window.location.pathname = "/submit-survey"
+          case 'come-again': window.location.pathname = "/thank-you"
               break
           case 'today': window.location.pathname = "/last-week"
               break
@@ -148,7 +148,7 @@
                 break
           case 'play': window.location.pathname = "/next-week"
                 break
-          case 'next-week': window.location.pathname = "/submit-survey"
+          case 'next-week': window.location.pathname = "/thank-you"
                 break
     }
   }
