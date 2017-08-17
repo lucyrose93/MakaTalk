@@ -110,7 +110,7 @@ nav li {
 .img-options {
   width: 100%;
 }
-.select-survey-button {
+.select-survey-button, #send-results-button, #done-button {
   border-style: none;
   border-radius: .5em;
   width: 75%;
@@ -118,10 +118,10 @@ nav li {
   font-size: 2em;
   color: white;
 }
-#pre-session-button {
+#pre-session-button, #send-results-button {
   background: #5144af;
 }
-#post-session-button {
+#post-session-button, #done-button {
   margin-top: 1em;
   background: #d90368;
 }
