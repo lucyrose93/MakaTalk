@@ -141,3 +141,6 @@ nav li {
 #insert-answers {
   text-align: left;
 }
+.highlighted-option {
+  border: solid red 2em;
+}
