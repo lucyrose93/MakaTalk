@@ -19,5 +19,6 @@ module.exports = [
   './login',
   './results',
   './static',
-  './storage-cleared'
+  './storage-cleared', 
+  './information'
 ].map(require)

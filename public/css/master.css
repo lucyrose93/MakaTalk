@@ -1,6 +1,6 @@
 /*remove default styles*/
 
-body, html {
+html, body {
   margin: 0;
   color: white;
   background: #5144af;
@@ -32,6 +32,17 @@ nav li {
   font-size: 3em;
   margin-left: .5em;
 }
+#info-button-nav {
+  height: 2em;
+  fill: white;
+  margin: .5em .8em;
+}
+
+.photo-background {
+  background-image: url('../imgs/hands-background.jpg');
+  height: 100vh;
+}
+
 .dialogue-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,7 +129,7 @@ nav li {
 #pre-session-button, #send-results-button {
   background: #5144af;
 }
-#post-session-button, #finish-button {
+#post-session-button, #finish-button, #ok-instructions-button {
   margin: 1em auto;
   background: #d90368;
 }
@@ -143,4 +154,14 @@ nav li {
 }
 #confirm-done {
   visibility: hidden;
+}
+#exit-information {
+  height: 1.5em;
+  margin: .5em;
+  float: right;
+}
+#arrow-back {
+  float: left;
+  height: 2em;
+  margin: .5em;
 }
