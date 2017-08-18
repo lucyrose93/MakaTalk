@@ -1,9 +1,7 @@
 /* global: location, sessionStorage */
+var path = location.pathname.slice(1)
 
-(function collectAnswers () {
-  var path = location.pathname.slice(1)
-
-  // select survey type
+function eventListenersToButtons() {
   if (path === 'select-survey') {
     var preSession = document.getElementById('pre-session-button')
     preSession.addEventListener('click', function () {
@@ -25,32 +23,6 @@
     })
   }
 
-  // obtain consent
-  if (path === 'consent') {
-    var survey = sessionStorage.getItem('select-survey')
-    var yesConsent = document.getElementById('yes-consent')
-    yesConsent.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'yes')
-      window.location.pathname = '/instructions'
-    })
-    var noConsent = document.getElementById('no-consent')
-    noConsent.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'no')
-      window.location.pathname = '/thank-you'
-    })
-  }
-
-  if (path==='instructions') {
-    var okInstructions = document.getElementById('ok-instructions-button')
-    okInstructions.addEventListener('click', function(){
-      if (survey==='pre-session') {
-        window.location.pathname = "/today"
-      } else {
-        window.location.pathname = "/understand"
-      }
-    })
-  }
-
   if (path==='thank-you'){
     var okSubmit = document.getElementById('submit-survey-button')
     okSubmit.addEventListener('click', function(){
@@ -64,6 +36,30 @@
       var clinicianEmail = document.getElementById('clinician-email-input').value
       sessionStorage.setItem('clinician-email', clinicianEmail)
       window.location.pathname = '/results'
+    })
+  }
+}
+
+eventListenersToButtons();
+
+function eventListenersToAnswers() {
+  // obtain consent
+  if (path === 'consent') {
+    var survey = sessionStorage.getItem('select-survey')
+    var yesConsent = document.getElementById('yes-consent')
+    yesConsent.addEventListener('click', function () {
+      sessionStorage.setItem(path, 'yes')
+      if (survey==='pre-session') {
+        window.location.pathname = "/today"
+      } else {
+        window.location.pathname = "/understand"
+      }
+    })
+
+    var noConsent = document.getElementById('no-consent')
+    noConsent.addEventListener('click', function () {
+      sessionStorage.setItem(path, 'no')
+      window.location.pathname = '/thank-you'
     })
   }
 
@@ -108,7 +104,7 @@
   }
 
   // post-session responses
-  if (path === 'understand' ||
+  if (path === 'listen' ||
     path === 'like' ||
     path === 'help' ||
     path === 'come-again') {
@@ -131,6 +127,7 @@
       nextQuestion()
     })
   }
+}
 
   function nextQuestion() {
     switch(path){
@@ -158,4 +155,3 @@
                 break
     }
   }
-})()
