@@ -52,7 +52,6 @@
     var currentIndex = player.getPlaylistIndex()
     var path = location.pathname.slice(1)
     var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
-    console.log('AnswersArr', answersArr)
 
       if (path === 'consent') {
           switch (currentIndex) {
