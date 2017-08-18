@@ -36,7 +36,7 @@
   };
 
   function toggleHighlight(answer, arr, event) {
-      for (var i=0; i<arr.length; i++) {
+      for (var i=1; i<arr.length; i++) {
         if (arr[i].classList.contains("highlighted-option") === true) {
           arr[i].classList.remove("highlighted-option")
         }
@@ -51,16 +51,17 @@
 
     var currentIndex = player.getPlaylistIndex()
     var path = location.pathname.slice(1)
+    var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
+    console.log('AnswersArr', answersArr)
 
       if (path === 'consent') {
-        var twoAnswers = [yesConsent, noConsent] = [document.getElementById('yes-consent'), document.getElementById('no-consent')]
-        switch (currentIndex) {
-          case 1:
-            toggleHighlight(yesConsent, twoAnswers, event)
-            break
-          case 2:
-            toggleHighlight(noConsent, twoAnswers, event)
-        }
+          switch (currentIndex) {
+            case 1:
+              toggleHighlight(answersArr[1], answersArr, event)
+              break
+            case 2:
+              toggleHighlight(answersArr[2], answersArr, event)
+          }
       }
 
       if (path === 'family' ||
@@ -70,41 +71,38 @@
         path === 'play' ||
         path === 'school' ||
         path === 'today') {
-        var fiveAnswers = [veryGoodOption, goodOption, okOption, badOption, veryBadOption] = [document.getElementById('very-good-option'), document.getElementById('good-option'), document.getElementById('ok-option'), document.getElementById('bad-option'), document.getElementById('very-bad-option')]
-
-        switch (currentIndex) {
-          case 1:
-            toggleHighlight(veryGoodOption, fiveAnswers, event)
-            break
-          case 2:
-            toggleHighlight(goodOption, fiveAnswers, event)
-            break
-          case 3:
-            toggleHighlight(okOption, fiveAnswers, event)
-            break
-          case 4:
-            toggleHighlight(badOption,fiveAnswers, event)
-            break
-          case 5:
-            toggleHighlight(veryBadOption, fiveAnswers, event)
-        }
+          switch (currentIndex) {
+            case 1:
+              toggleHighlight(answersArr[1], answersArr, event)
+              break
+            case 2:
+              toggleHighlight(answersArr[2], answersArr, event)
+              break
+            case 3:
+              toggleHighlight(answersArr[3], answersArr, event)
+              break
+            case 4:
+              toggleHighlight(answersArr[4], answersArr, event)
+              break
+            case 5:
+              toggleHighlight(answersArr[5], answersArr, event)
+          }
       }
 
       if (path === 'help' ||
         path === 'like' ||
         path === 'understand' ||
         path === 'come-again') {
-        var threeAnswers = [yesAgree, maybe, noDisagree] = [document.getElementById('yes-agree'), document.getElementById('maybe'), document.getElementById('no-disagree')]
-        switch (currentIndex) {
-          case 1:
-            toggleHighlight(yesAgree, threeAnswers, event)
-            break
-          case 2:
-            toggleHighlight(maybe, threeAnswers, event)
-            break
-          case 3:
-            toggleHighlight(noDisagree, threeAnswers, event)
-        }
+          switch (currentIndex) {
+            case 1:
+              toggleHighlight(answersArr[1], answersArr, event)
+              break
+            case 2:
+              toggleHighlight(answersArr[2], answersArr, event)
+              break
+            case 3:
+              toggleHighlight(answersArr[3], answersArr, event)
+          }
       }
   }
 
