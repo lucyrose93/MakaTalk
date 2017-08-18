@@ -1,12 +1,18 @@
-var clearStorage = document.getElementById('done-button')
+(function clearStorage() {
 
-clearStorage.addEventListener('click', function(){
-  var confirmDoneMessage = document.getElementById('confirm-done-message')
-  confirmDoneMessage.style.display="inherit"
-})
+  var path = location.pathname.slice(1)
+  if (path === "results"){
+    var finishButton = document.getElementById('finish-button')
 
-var confirmDoneButton = document.getElementById('confirm-done-button')
-confirmDoneButton.addEventListener('click', function(){
-  sessionStorage.clear()
-  window.location.pathname = 'storage-cleared'
-})
+    finishButton.addEventListener('click', function() {
+      var confirmDoneMessage = document.getElementById('confirm-done')
+      confirmDoneMessage.style.visibility = "visible"
+    })
+
+    var confirmDoneButton = document.getElementById('confirm-done-button')
+    confirmDoneButton.addEventListener('click', function() {
+      sessionStorage.clear()
+      window.location.pathname = 'storage-cleared'
+    })
+  }
+})()
