@@ -35,32 +35,32 @@
     YT.ready(onYouTubeIframeAPIReady);
   };
 
-  function toggleHighlight(x) {
-    x.classList.toggle("highlighted-option")
-    setTimeout(function() {
-      x.classList.remove("highlighted-option")
-    }, 3000)
+  function toggleHighlight(answer, arr, event) {
+      for (var i=1; i<arr.length; i++) {
+        if (arr[i].classList.contains("highlighted-option") === true) {
+          arr[i].classList.remove("highlighted-option")
+        }
+      }
+      answer.classList.add("highlighted-option")
+      if (event.data == YT.PlayerState.ENDED) {
+          answer.classList.remove("highlighted-option")
+      }
   }
 
   function onPlayerStateChange(event) {
 
     var currentIndex = player.getPlaylistIndex()
-
-
-    if (event.data == YT.PlayerState.PLAYING) {
-      // var currentIndex = player.getPlaylistIndex()
-      var path = location.pathname.slice(1)
+    var path = location.pathname.slice(1)
+    var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
 
       if (path === 'consent') {
-        var yesConsent = document.getElementById('yes-consent')
-        var noConsent = document.getElementById('no-consent')
-        switch (currentIndex) {
-          case 1:
-            toggleHighlight(yesConsent)
-            break
-          case 2:
-            toggleHighlight(noConsent)
-        }
+          switch (currentIndex) {
+            case 1:
+              toggleHighlight(answersArr[1], answersArr, event)
+              break
+            case 2:
+              toggleHighlight(answersArr[2], answersArr, event)
+          }
       }
 
       if (path === 'family' ||
@@ -70,48 +70,39 @@
         path === 'play' ||
         path === 'school' ||
         path === 'today') {
-        var veryGoodOption = document.getElementById('very-good-option')
-        var goodOption = document.getElementById('good-option')
-        var okOption = document.getElementById('ok-option')
-        var badOption = document.getElementById('bad-option')
-        var veryBadOption = document.getElementById('very-bad-option')
-
-        switch (currentIndex) {
-          case 1:
-            toggleHighlight(veryGoodOption)
-            break
-          case 2:
-            toggleHighlight(goodOption)
-            break
-          case 3:
-            toggleHighlight(okOption)
-            break
-          case 4:
-            toggleHighlight(badOption)
-            break
-          case 5:
-            toggleHighlight(veryBadOption)
-        }
+          switch (currentIndex) {
+            case 1:
+              toggleHighlight(answersArr[1], answersArr, event)
+              break
+            case 2:
+              toggleHighlight(answersArr[2], answersArr, event)
+              break
+            case 3:
+              toggleHighlight(answersArr[3], answersArr, event)
+              break
+            case 4:
+              toggleHighlight(answersArr[4], answersArr, event)
+              break
+            case 5:
+              toggleHighlight(answersArr[5], answersArr, event)
+          }
       }
 
       if (path === 'help' ||
         path === 'like' ||
         path === 'understand' ||
         path === 'come-again') {
-        var yesAgree = document.getElementById('yes-agree')
-        var noDisagree = document.getElementById('no-disagree')
-        var maybe = document.getElementById('maybe')
-        switch (currentIndex) {
-          case 1:
-            toggleHighlight(yesAgree)
-            break
-          case 2:
-            toggleHighlight(noDisagree)
-            break
-          case 3:
-            toggleHighlight(maybe)
-        }
+          switch (currentIndex) {
+            case 1:
+              toggleHighlight(answersArr[1], answersArr, event)
+              break
+            case 2:
+              toggleHighlight(answersArr[2], answersArr, event)
+              break
+            case 3:
+              toggleHighlight(answersArr[3], answersArr, event)
+          }
       }
-    }
   }
+
 })()
