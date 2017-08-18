@@ -18,5 +18,6 @@ module.exports = [
   './submit-survey',
   './login',
   './results',
-  './static'
+  './static',
+  './storage-cleared'
 ].map(require)
