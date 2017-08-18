@@ -31,10 +31,10 @@ nav li {
   font-family: 'Amatic SC', cursive;
   font-size: 3em;
 }
-.nav-arrow {
+/*.nav-arrow {
   background: inherit;
   height: 1.6em;
-}
+}*/
 .dialogue-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -143,4 +143,7 @@ nav li {
 }
 .highlighted-option {
   border: solid red 2em;
+}
+#confirm-done {
+  display: none;
 }
