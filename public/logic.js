@@ -45,10 +45,19 @@
     })
   }
 
-  if (path==='submit-survey'){
-    var okSubmit = document.getElementById('ok-submit-survey')
+  if (path==='thank-you'){
+    var okSubmit = document.getElementById('submit-survey-button')
     okSubmit.addEventListener('click', function(){
       window.location.pathname = '/login'
+    })
+  }
+
+  if (path==='login'){
+    var submitLoginDetails = document.getElementById('submit-login-button')
+    submitLoginDetails.addEventListener('click', function(){
+      var clinicianEmail = document.getElementById('clinician-email-input').value
+      sessionStorage.setItem('clinician-email', clinicianEmail)
+      window.location.pathname = '/results'
     })
   }
 
@@ -125,7 +134,7 @@
             break
           case 'like': window.location.pathname = "/come-again"
             break
-          case 'come-again': window.location.pathname = "/submit-survey"
+          case 'come-again': window.location.pathname = "/thank-you"
               break
           case 'today': window.location.pathname = "/last-week"
               break
@@ -139,7 +148,7 @@
                 break
           case 'play': window.location.pathname = "/next-week"
                 break
-          case 'next-week': window.location.pathname = "/submit-survey"
+          case 'next-week': window.location.pathname = "/thank-you"
                 break
     }
   }
