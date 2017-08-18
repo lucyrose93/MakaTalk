@@ -35,34 +35,31 @@
     YT.ready(onYouTubeIframeAPIReady);
   };
 
-  function toggleHighlight(answer, arr) {
-    for (var i=0; i<arr.length; i++) {
-      if (arr[i].classList.contains("highlighted-option") === true) {
-        arr[i].classList.remove("highlighted-option")
+  function toggleHighlight(answer, arr, event) {
+      for (var i=0; i<arr.length; i++) {
+        if (arr[i].classList.contains("highlighted-option") === true) {
+          arr[i].classList.remove("highlighted-option")
+        }
       }
-    }
-    answer.classList.add("highlighted-option")
-    if (event.data == YT.PlayerState.ENDED) {
-      console.log('I finished!')
-    }
+      answer.classList.add("highlighted-option")
+      if (event.data == YT.PlayerState.ENDED) {
+          answer.classList.remove("highlighted-option")
+      }
   }
 
   function onPlayerStateChange(event) {
 
     var currentIndex = player.getPlaylistIndex()
-
-    if (event.data == YT.PlayerState.PLAYING) {
-      var path = location.pathname.slice(1)
+    var path = location.pathname.slice(1)
 
       if (path === 'consent') {
         var twoAnswers = [yesConsent, noConsent] = [document.getElementById('yes-consent'), document.getElementById('no-consent')]
-        console.log('Here are my 2 answers', twoAnswers)
         switch (currentIndex) {
           case 1:
-            toggleHighlight(yesConsent, twoAnswers)
+            toggleHighlight(yesConsent, twoAnswers, event)
             break
           case 2:
-            toggleHighlight(noConsent, twoAnswers)
+            toggleHighlight(noConsent, twoAnswers, event)
         }
       }
 
@@ -77,19 +74,19 @@
 
         switch (currentIndex) {
           case 1:
-            toggleHighlight(veryGoodOption, fiveAnswers )
+            toggleHighlight(veryGoodOption, fiveAnswers, event)
             break
           case 2:
-            toggleHighlight(goodOption, fiveAnswers)
+            toggleHighlight(goodOption, fiveAnswers, event)
             break
           case 3:
-            toggleHighlight(okOption, fiveAnswers)
+            toggleHighlight(okOption, fiveAnswers, event)
             break
           case 4:
-            toggleHighlight(badOption,fiveAnswers)
+            toggleHighlight(badOption,fiveAnswers, event)
             break
           case 5:
-            toggleHighlight(veryBadOption, fiveAnswers)
+            toggleHighlight(veryBadOption, fiveAnswers, event)
         }
       }
 
@@ -100,15 +97,15 @@
         var threeAnswers = [yesAgree, maybe, noDisagree] = [document.getElementById('yes-agree'), document.getElementById('maybe'), document.getElementById('no-disagree')]
         switch (currentIndex) {
           case 1:
-            toggleHighlight(yesAgree, threeAnswers)
+            toggleHighlight(yesAgree, threeAnswers, event)
             break
           case 2:
-            toggleHighlight(maybe, threeAnswers)
+            toggleHighlight(maybe, threeAnswers, event)
             break
           case 3:
-            toggleHighlight(noDisagree, threeAnswers)
+            toggleHighlight(noDisagree, threeAnswers, event)
         }
       }
-    }
   }
+
 })()
