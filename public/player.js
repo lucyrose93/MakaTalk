@@ -42,17 +42,42 @@
         }
       }
       answer.classList.add("highlighted-option")
-      if (event.data == YT.PlayerState.ENDED) {
-          answer.classList.remove("highlighted-option")
+      var endedTimes = 0;
+      if (answer === arr[arr.length-1] && event.data == YT.PlayerState.PLAYING) {
+        endedTimes++;
+        // console.log('endedtimes', endedTimes)
       }
+       if (endedTimes === 1 && YT.PlayerState.ENDED) {
+        console.log('Yey!');
+          answer.classList.remove("highlighted-option")
+          eventListenersToAnswers()
+          // console.log('event', eventListenersToAnswers())
+        }
   }
 
-  function onPlayerStateChange(event) {
+  // function toggleHighlight(answer, arr, event) {
+  //     for (var i=1; i<arr.length; i++) {
+  //       if (arr[i].classList.contains("highlighted-option") === true) {
+  //         arr[i].classList.remove("highlighted-option")
+  //         var j=i;
+  //       }
+  //       answer.classList.add("highlighted-option")
+  //       console.log(j, arr.length-1, 'fuccc');
+  //       if (j==arr[arr.length-1] && event.data == YT.PlayerState.ENDED) {
+  //         answer.classList.remove("highlighted-option")
+  //         console.log('event', eventListenersToAnswers())
+  //         // setTimeout(function() {addEventListersAnswers()}, 1000)
+  //       }
+  //     }
+  // }
 
+  function onPlayerStateChange(event) {
+    // console.log('my status', event.data);
     var currentIndex = player.getPlaylistIndex()
+    var myFuncCalls = 0;
+
     var path = location.pathname.slice(1)
     var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
-
       if (path === 'consent') {
           switch (currentIndex) {
             case 1:

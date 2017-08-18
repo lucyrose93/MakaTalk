@@ -1,9 +1,7 @@
 /* global: location, sessionStorage */
+var path = location.pathname.slice(1)
 
-(function collectAnswers () {
-  var path = location.pathname.slice(1)
-
-  // select survey type
+function eventListenersToButtons() {
   if (path === 'select-survey') {
     var preSession = document.getElementById('pre-session-button')
     preSession.addEventListener('click', function () {
@@ -25,6 +23,26 @@
     })
   }
 
+  if (path==='thank-you'){
+    var okSubmit = document.getElementById('submit-survey-button')
+    okSubmit.addEventListener('click', function(){
+      window.location.pathname = '/login'
+    })
+  }
+
+  if (path==='login'){
+    var submitLoginDetails = document.getElementById('submit-login-button')
+    submitLoginDetails.addEventListener('click', function(){
+      var clinicianEmail = document.getElementById('clinician-email-input').value
+      sessionStorage.setItem('clinician-email', clinicianEmail)
+      window.location.pathname = '/results'
+    })
+  }
+}
+
+eventListenersToButtons();
+
+function eventListenersToAnswers() {
   // obtain consent
   if (path === 'consent') {
     var survey = sessionStorage.getItem('select-survey')
@@ -42,22 +60,6 @@
     noConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'no')
       window.location.pathname = '/thank-you'
-    })
-  }
-
-  if (path==='thank-you'){
-    var okSubmit = document.getElementById('submit-survey-button')
-    okSubmit.addEventListener('click', function(){
-      window.location.pathname = '/login'
-    })
-  }
-
-  if (path==='login'){
-    var submitLoginDetails = document.getElementById('submit-login-button')
-    submitLoginDetails.addEventListener('click', function(){
-      var clinicianEmail = document.getElementById('clinician-email-input').value
-      sessionStorage.setItem('clinician-email', clinicianEmail)
-      window.location.pathname = '/results'
     })
   }
 
@@ -102,7 +104,7 @@
   }
 
   // post-session responses
-  if (path === 'understand' ||
+  if (path === 'listen' ||
     path === 'like' ||
     path === 'help' ||
     path === 'come-again') {
@@ -125,6 +127,7 @@
       nextQuestion()
     })
   }
+}
 
   function nextQuestion() {
     switch(path){
@@ -152,4 +155,3 @@
                 break
     }
   }
-})()
