@@ -30,11 +30,8 @@ nav li {
 .makatalk-logo {
   font-family: 'Amatic SC', cursive;
   font-size: 3em;
+  margin-left: .5em;
 }
-/*.nav-arrow {
-  background: inherit;
-  height: 1.6em;
-}*/
 .dialogue-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,7 +107,7 @@ nav li {
 .img-options {
   width: 100%;
 }
-.select-survey-button, #send-results-button, #done-button, #submit-survey-button {
+.select-survey-button, #send-results-button, #finish-button, #submit-survey-button {
   border-style: none;
   border-radius: .5em;
   width: 75%;
@@ -121,8 +118,8 @@ nav li {
 #pre-session-button, #send-results-button {
   background: #5144af;
 }
-#post-session-button, #done-button {
-  margin-top: 1em;
+#post-session-button, #finish-button {
+  margin: 1em auto;
   background: #d90368;
 }
 #confirm-survey-button {
@@ -145,5 +142,5 @@ nav li {
   border: solid red 2em;
 }
 #confirm-done {
-  display: none;
+  visibility: hidden;
 }
