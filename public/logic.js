@@ -48,6 +48,7 @@ function eventListenersToAnswers() {
     var survey = sessionStorage.getItem('select-survey')
     var yesConsent = document.getElementById('yes-consent')
     yesConsent.addEventListener('click', function () {
+      yesConsent.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'yes')
       if (survey==='pre-session') {
         window.location.pathname = "/today"
@@ -58,6 +59,7 @@ function eventListenersToAnswers() {
 
     var noConsent = document.getElementById('no-consent')
     noConsent.addEventListener('click', function () {
+      noConsent.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'no')
       window.location.pathname = '/thank-you'
     })
@@ -74,30 +76,35 @@ function eventListenersToAnswers() {
     path === 'next-week') {
     var veryGood = document.getElementById('very-good-option')
     veryGood.addEventListener('click', function () {
+      veryGood.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'very good')
       nextQuestion()
     })
 
     var good = document.getElementById('good-option')
     good.addEventListener('click', function () {
+      good.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'good')
       nextQuestion()
     })
 
     var ok = document.getElementById('ok-option')
     ok.addEventListener('click', function () {
+      ok.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'ok')
       nextQuestion()
     })
 
     var bad = document.getElementById('bad-option')
     bad.addEventListener('click', function () {
+      bad.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'bad')
       nextQuestion()
     })
 
     var veryBad = document.getElementById('very-bad-option')
     veryBad.addEventListener('click', function () {
+      veryBad.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'very bad')
       nextQuestion()
     })
@@ -111,18 +118,21 @@ function eventListenersToAnswers() {
 
     var yes = document.getElementById('yes-agree')
     yes.addEventListener('click', function () {
+      yes.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'yes')
       nextQuestion()
     })
 
     var no = document.getElementById('no-disagree')
     no.addEventListener('click', function () {
+      no.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'no')
       nextQuestion()
     })
 
     var maybe = document.getElementById('maybe')
     maybe.addEventListener('click', function () {
+      maybe.classList.add("highlighted-option")
       sessionStorage.setItem(path, 'maybe')
       nextQuestion()
     })

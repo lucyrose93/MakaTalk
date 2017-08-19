@@ -50,7 +50,6 @@
 
       if (answer === arr[arr.length-1]) {
         var myFuncCount = funcCount();
-        console.log('Countring', myFuncCount);
       }
       if(myFuncCount === 5) {
         answer.classList.remove("highlighted-option")
@@ -60,8 +59,6 @@
 
   function onPlayerStateChange(event) {
     var currentIndex = player.getPlaylistIndex()
-    console.log(currentIndex);
-    console.log('my status', event.data);
 
     var path = location.pathname.slice(1)
     var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
