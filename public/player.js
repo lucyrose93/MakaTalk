@@ -53,7 +53,7 @@
       }
       if(myFuncCount === 5) {
         answer.classList.remove("highlighted-option")
-        eventListenersToAnswers()
+        answerListeners()
       }
   }
 
@@ -69,7 +69,6 @@
               break
             case 2:
               toggleHighlight(answersArr[2], answersArr, event)
-              // console.log('Function called')
           }
       }
 
