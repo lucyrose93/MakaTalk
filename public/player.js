@@ -35,6 +35,11 @@
     YT.ready(onYouTubeIframeAPIReady);
   };
 
+  var funcCount = (function () {
+      var counter = 0;
+      return function () {return counter += 1;}
+  })();
+
   function toggleHighlight(answer, arr, event) {
       for (var i=1; i<arr.length; i++) {
         if (arr[i].classList.contains("highlighted-option") === true) {
@@ -42,26 +47,21 @@
         }
       }
       answer.classList.add("highlighted-option")
-      if (event.data == YT.PlayerState.ENDED) {
+
+      if (answer === arr[arr.length-1]) {
+        var myFuncCount = funcCount();
+        console.log('Countring', myFuncCount);
+      }
+      if(myFuncCount === 5) {
         answer.classList.remove("highlighted-option")
         eventListenersToAnswers()
       }
-      // var endedTimes = 0;
-      // if (answer === arr[arr.length-1] && event.data == YT.PlayerState.PLAYING) {
-      //   endedTimes++;
-      //   // console.log('endedtimes', endedTimes)
-      // }
-      //  if (endedTimes === 1 && YT.PlayerState.ENDED) {
-      //   console.log('Yey!');
-      //     answer.classList.remove("highlighted-option")
-      //     eventListenersToAnswers()
-      //   }
   }
 
   function onPlayerStateChange(event) {
-    // console.log('my status', event.data);
     var currentIndex = player.getPlaylistIndex()
-    var myFuncCalls = 0;
+    console.log(currentIndex);
+    console.log('my status', event.data);
 
     var path = location.pathname.slice(1)
     var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
@@ -72,6 +72,7 @@
               break
             case 2:
               toggleHighlight(answersArr[2], answersArr, event)
+              // console.log('Function called')
           }
       }
 
@@ -97,7 +98,7 @@
               break
             case 5:
               toggleHighlight(answersArr[5], answersArr, event)
-          }
+              }
       }
 
       if (path === 'help' ||
