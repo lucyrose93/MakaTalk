@@ -40,13 +40,13 @@
       return function () {return counter += 1;}
   })();
 
-  function toggleHighlight(answer, arrAnswers, event) {
-      for (var i=1; i<arrAnswers.length; i++) {
-          arrAnswers[i].classList.remove("highlighted-option")
+  function toggleHighlight(answer, answersArr, event) {
+      for (var i=1; i<answersArr.length; i++) {
+          answersArr[i].classList.remove("highlighted-option")
       }
       answer.classList.add("highlighted-option")
 
-      if (answer === arrAnswers[arrAnswers.length-1]) {
+      if (answer === answersArr[answersArr.length-1]) {
         var myFuncCount = funcCount();
       }
       if(myFuncCount === 5) {
