@@ -40,15 +40,13 @@
       return function () {return counter += 1;}
   })();
 
-  function toggleHighlight(answer, arr, event) {
-      for (var i=1; i<arr.length; i++) {
-        if (arr[i].classList.contains("highlighted-option") === true) {
-          arr[i].classList.remove("highlighted-option")
-        }
+  function toggleHighlight(answer, arrAnswers, event) {
+      for (var i=1; i<arrAnswers.length; i++) {
+          arrAnswers[i].classList.remove("highlighted-option")
       }
       answer.classList.add("highlighted-option")
 
-      if (answer === arr[arr.length-1]) {
+      if (answer === arrAnswers[arrAnswers.length-1]) {
         var myFuncCount = funcCount();
       }
       if(myFuncCount === 5) {
@@ -62,55 +60,8 @@
 
     var path = location.pathname.slice(1)
     var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
-      if (path === 'consent') {
-          switch (currentIndex) {
-            case 1:
-              toggleHighlight(answersArr[1], answersArr, event)
-              break
-            case 2:
-              toggleHighlight(answersArr[2], answersArr, event)
-          }
-      }
-
-      if (path === 'family' ||
-        path === 'friends' ||
-        path === 'last-week' ||
-        path === 'next-week' ||
-        path === 'play' ||
-        path === 'school' ||
-        path === 'today') {
-          switch (currentIndex) {
-            case 1:
-              toggleHighlight(answersArr[1], answersArr, event)
-              break
-            case 2:
-              toggleHighlight(answersArr[2], answersArr, event)
-              break
-            case 3:
-              toggleHighlight(answersArr[3], answersArr, event)
-              break
-            case 4:
-              toggleHighlight(answersArr[4], answersArr, event)
-              break
-            case 5:
-              toggleHighlight(answersArr[5], answersArr, event)
-              }
-      }
-
-      if (path === 'help' ||
-        path === 'like' ||
-        path === 'understand' ||
-        path === 'come-again') {
-          switch (currentIndex) {
-            case 1:
-              toggleHighlight(answersArr[1], answersArr, event)
-              break
-            case 2:
-              toggleHighlight(answersArr[2], answersArr, event)
-              break
-            case 3:
-              toggleHighlight(answersArr[3], answersArr, event)
-          }
+      if (currentIndex !== 0) {
+        toggleHighlight(answersArr[currentIndex], answersArr, event)
       }
   }
 
