@@ -7,7 +7,7 @@ function buttonListeners() {
     var buttonsArr = Array.from(document.querySelectorAll("button[id]"))
     buttonsArr.forEach(function (item) {
       item.addEventListener('click', function () {
-        sessionStorage.setItem(path, item.innerHTML)
+        sessionStorage.setItem(path, item.textContent)
         nextQuestion()
       })
     })
@@ -40,7 +40,7 @@ function answerListeners() {
     answersArr.forEach(function (item) {
       item.addEventListener('click', function () {
         item.classList.add("highlighted-option")
-        sessionStorage.setItem(path, item.lastElementChild.innerHTML.toLowerCase())
+        sessionStorage.setItem(path, item.lastElementChild.textContent.toLowerCase())
         nextQuestion()
       })
     })
@@ -51,13 +51,13 @@ function answerListeners() {
 
     answersArr[1].addEventListener('click', function () {
       answersArr[1].classList.add("highlighted-option")
-      sessionStorage.setItem(path, answersArr[1].lastElementChild.innerHTML.toLowerCase())
+      sessionStorage.setItem(path, answersArr[1].lastElementChild.textContent.toLowerCase())
         window.location.pathname = "/thank-you"
     })
 
     answersArr[0].addEventListener('click', function () {
       answersArr[0].classList.add("highlighted-option")
-      sessionStorage.setItem(path, answersArr[0].lastElementChild.innerHTML.toLowerCase())
+      sessionStorage.setItem(path, answersArr[0].lastElementChild.textContent.toLowerCase())
       if (survey === 'pre-session') {
         window.location.pathname = "/today"
       } else {
