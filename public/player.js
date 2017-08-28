@@ -55,11 +55,15 @@
       }
   }
 
+  var toArray = function(arrayLike) {
+    return [].slice.call(arrayLike, 0)
+  }
+  
   function onPlayerStateChange(event) {
     var currentIndex = player.getPlaylistIndex()
 
     var path = location.pathname.slice(1)
-    var answersArr = Array.from(document.getElementsByTagName("FIGURE"));
+    var answersArr = toArray(document.getElementsByTagName("FIGURE"));
       if (currentIndex !== 0) {
         toggleHighlight(answersArr[currentIndex], answersArr, event)
       }

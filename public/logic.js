@@ -1,10 +1,14 @@
 /* global: location, sessionStorage */
 var path = location.pathname.slice(1)
 
+var toArray = function(arrayLike) {
+  return [].slice.call(arrayLike, 0)
+}
+
 function buttonListeners() {
 
   if (path === 'select-survey') {
-    var buttonsArr = Array.from(document.querySelectorAll("button[id]"))
+    var buttonsArr = toArray(document.querySelectorAll("button[id]"))
     buttonsArr.forEach(function (item) {
       item.addEventListener('click', function () {
         sessionStorage.setItem(path, item.textContent)
@@ -14,7 +18,7 @@ function buttonListeners() {
   }
 
   if (path === 'confirm-survey' || path === 'thank-you') {
-    var myButton = Array.from(document.querySelectorAll('button'))
+    var myButton = toArray(document.querySelectorAll('button'))
     myButton[0].addEventListener('click', function () {
       nextQuestion()
     })
@@ -34,9 +38,9 @@ buttonListeners();
 
 function answerListeners() {
   var pathsArr = ['understand', 'like', 'help', 'come-again', 'today', 'last-week', 'friends', 'family', 'school', 'play', 'next-week']
-  var answersArr = Array.from(document.querySelectorAll("figure[id]"))
+  var answersArr = toArray(document.querySelectorAll("figure[id]"))
 
-  if (pathsArr.includes(path.toString())) {
+    if (pathsArr.indexOf(path.toString()) !== -1) {
     answersArr.forEach(function (item) {
       item.addEventListener('click', function () {
         item.classList.add("highlighted-option")
