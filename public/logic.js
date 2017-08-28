@@ -1,4 +1,5 @@
 /* global: location, sessionStorage */
+// (function myLogic() {
 var path = location.pathname.slice(1)
 
 var toArray = function(arrayLike) {
@@ -12,7 +13,7 @@ function buttonListeners() {
     buttonsArr.forEach(function (item) {
       item.addEventListener('click', function () {
         sessionStorage.setItem(path, item.textContent)
-        nextQuestion()
+        navigateToNextQuestion(path)
       })
     })
   }
@@ -20,7 +21,7 @@ function buttonListeners() {
   if (path === 'confirm-survey' || path === 'thank-you') {
     var myButton = toArray(document.querySelectorAll('button'))
     myButton[0].addEventListener('click', function () {
-      nextQuestion()
+      navigateToNextQuestion(path)
     })
   }
 
@@ -29,7 +30,7 @@ function buttonListeners() {
     //E-mail validation in the future refactoring
     myButton.addEventListener('click', function () {
     sessionStorage.setItem('e-mail', JSON.stringify(document.getElementById('clinician-email-input').value))
-    nextQuestion()
+    navigateToNextQuestion(path)
     })
   }
 }
@@ -45,7 +46,7 @@ function answerListeners() {
       item.addEventListener('click', function () {
         item.classList.add("highlighted-option")
         sessionStorage.setItem(path, item.lastElementChild.textContent.toLowerCase())
-        nextQuestion()
+        navigateToNextQuestion(path)
       })
     })
   }
@@ -71,64 +72,30 @@ function answerListeners() {
   }
 }
 
-function nextQuestion() {
-
-  if (path === 'select-survey') {
-    window.location.pathname = '/confirm-survey'
-  }
-
-  if (path === 'confirm-survey') {
-    window.location.pathname = '/consent'
-  }
-
-  var preSessionArr = ['today', 'last-week', 'friends', 'family', 'school', 'play', 'next-week', 'thank-you', 'login', 'results']
-  for (var i=0; i<preSessionArr.length-1; i++) {
-    if (path===preSessionArr[i]) {
-      window.location.pathname = `/${preSessionArr[i+1]}`
-    }
-  }
-
-  var postSessionArr = ['understand', 'like', 'help', 'come-again', 'thank-you', 'login', 'results']
-  for (var j=0; j<postSessionArr.length-1; j++) {
-    if (path===postSessionArr[j]) {
-      window.location.pathname = `/${postSessionArr[j+1]}`
-    }
-  }
+var nextQuestion = {
+['select-survey']: 'confirm-survey',
+['confirm-survey']  : 'consent',
+  understand: 'help',
+  help: 'like',
+  like: 'come-again',
+  ['come-again']: 'thank-you',
+  today: 'last-week',
+  ['last-week']: 'family',
+  family: 'friends',
+  friends: 'school',
+  school: 'play',
+  play: 'next-week',
+  ['next-week']: 'thank-you',
+  ['thank-you']: 'login',
+  login: 'results'
 }
 
-
-
-  // function nextQuestion() {
-  //   switch(path){
-  //         case 'understand': window.location.pathname = "/help"
-  //           break
-  //         case 'help': window.location.pathname = "/like"
-  //           break
-  //         case 'like': window.location.pathname = "/come-again"
-  //           break
-  //         case 'come-again': window.location.pathname = "/thank-you"
-  //             break
-  //         case 'today': window.location.pathname = "/last-week"
-  //             break
-  //         case 'last-week': window.location.pathname = "family"
-  //             break
-  //         case 'family': window.location.pathname = "/friends"
-  //             break
-  //         case 'friends': window.location.pathname = "/school"
-  //               break
-  //         case 'school': window.location.pathname = "/play"
-  //               break
-  //         case 'play': window.location.pathname = "/next-week"
-  //               break
-  //         case 'next-week': window.location.pathname = "/thank-you"
-  //               break
-  //         case 'select-survey': window.location.pathname = "/confirm-survey"
-  //               break
-  //         case 'confirm-survey': window.location.pathname = "/consent"
-  //               break
-  //         case 'thank-you': window.location.pathname = "/login"
-  //               break
-  //         case 'login': window.location.pathname = "/results"
-  //               break
-  //   }
-  // }
+var navigateToNextQuestion = function(previous) {
+  var next = nextQuestion[previous]
+  if (!next) {
+    window.location.pathname='/not-found'
+    return
+  }
+  window.location.pathname= '/' + next
+}
+// })()
