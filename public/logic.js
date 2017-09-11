@@ -41,6 +41,7 @@
   }
 
   if (path==='instructions') {
+    var survey = sessionStorage.getItem('select-survey')
     var okInstructions = document.getElementById('ok-instructions-button')
     okInstructions.addEventListener('click', function(){
       if (survey==='pre-session') {

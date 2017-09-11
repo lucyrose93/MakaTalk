@@ -38,8 +38,15 @@ nav li {
   margin: .5em .8em;
 }
 
+.information-blurb {
+  max-width: 80%;
+  margin: auto;
+}
+
 .photo-background {
   background-image: url('../imgs/hands-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -88,6 +95,7 @@ nav li {
   width: 36em;
   max-width: 960px;
   margin: 2em auto;
+  margin-bottom: 7em;
 }
 .thumbnail-caption {
   text-align: center;
@@ -114,6 +122,7 @@ nav li {
 }
 .two-options figure {
   margin: 6em;
+  margin-top: 3em;
 }
 .img-options {
   width: 100%;
