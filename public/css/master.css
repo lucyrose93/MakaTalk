@@ -1,6 +1,6 @@
 /*remove default styles*/
 
-body, html {
+html, body {
   margin: 0;
   color: white;
   background: #5144af;
@@ -30,11 +30,26 @@ nav li {
 .makatalk-logo {
   font-family: 'Amatic SC', cursive;
   font-size: 3em;
+  margin-left: .5em;
 }
-/*.nav-arrow {
-  background: inherit;
-  height: 1.6em;
-}*/
+#info-button-nav {
+  height: 2em;
+  fill: white;
+  margin: .5em .8em;
+}
+
+.information-blurb {
+  max-width: 80%;
+  margin: auto;
+}
+
+.photo-background {
+  background-image: url('../imgs/hands-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 .dialogue-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -80,6 +95,7 @@ nav li {
   width: 36em;
   max-width: 960px;
   margin: 2em auto;
+  margin-bottom: 7em;
 }
 .thumbnail-caption {
   text-align: center;
@@ -106,11 +122,12 @@ nav li {
 }
 .two-options figure {
   margin: 6em;
+  margin-top: 3em;
 }
 .img-options {
   width: 100%;
 }
-.select-survey-button, #send-results-button, #done-button, #submit-survey-button {
+.select-survey-button, #send-results-button, #finish-button, #submit-survey-button {
   border-style: none;
   border-radius: .5em;
   width: 75%;
@@ -121,8 +138,8 @@ nav li {
 #pre-session-button, #send-results-button {
   background: #5144af;
 }
-#post-session-button, #done-button {
-  margin-top: 1em;
+#post-session-button, #finish-button, #ok-instructions-button {
+  margin: 1em auto;
   background: #d90368;
 }
 #confirm-survey-button {
@@ -145,5 +162,15 @@ nav li {
   border: solid red 2em;
 }
 #confirm-done {
-  display: none;
+  visibility: hidden;
+}
+#exit-information {
+  height: 1.5em;
+  margin: .5em;
+  float: right;
+}
+#arrow-back {
+  float: left;
+  height: 2em;
+  margin: .5em;
 }

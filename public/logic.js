@@ -31,17 +31,24 @@
     var yesConsent = document.getElementById('yes-consent')
     yesConsent.addEventListener('click', function () {
       sessionStorage.setItem(path, 'yes')
+      window.location.pathname = '/instructions'
+    })
+    var noConsent = document.getElementById('no-consent')
+    noConsent.addEventListener('click', function () {
+      sessionStorage.setItem(path, 'no')
+      window.location.pathname = '/thank-you'
+    })
+  }
+
+  if (path==='instructions') {
+    var survey = sessionStorage.getItem('select-survey')
+    var okInstructions = document.getElementById('ok-instructions-button')
+    okInstructions.addEventListener('click', function(){
       if (survey==='pre-session') {
         window.location.pathname = "/today"
       } else {
         window.location.pathname = "/understand"
       }
-    })
-
-    var noConsent = document.getElementById('no-consent')
-    noConsent.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'no')
-      window.location.pathname = '/thank-you'
     })
   }
 
@@ -102,7 +109,7 @@
   }
 
   // post-session responses
-  if (path === 'listen' ||
+  if (path === 'understand' ||
     path === 'like' ||
     path === 'help' ||
     path === 'come-again') {
