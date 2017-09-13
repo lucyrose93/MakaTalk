@@ -62,6 +62,7 @@ nav li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
+  padding: 1em;
   max-width: 400px;
   background: white;
   color: #5144af;
@@ -135,10 +136,18 @@ nav li {
   font-size: 2em;
   color: white;
 }
+.ok-submit-survey {
+  max-width: 10em;
+  margin: auto;
+}
+.results {
+  max-width: 50%;
+  margin-top: 2em;
+}
 #pre-session-button, #send-results-button {
   background: #5144af;
 }
-#post-session-button, #finish-button, #ok-instructions-button {
+#post-session-button, #finish-button {
   margin: 1em auto;
   background: #d90368;
 }
@@ -157,12 +166,18 @@ nav li {
 }
 #insert-answers {
   text-align: left;
+  margin-left: 4em;
 }
 .highlighted-option {
   border: solid red 2em;
 }
 #confirm-done {
   visibility: hidden;
+}
+#confirm-done-button {
+  color: red;
+  text-decoration: underline;
+  font-size: 1.2em;
 }
 #exit-information {
   height: 1.5em;
