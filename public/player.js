@@ -51,14 +51,14 @@
       }
       if(myFuncCount === 5) {
         answer.classList.remove("highlighted-option")
-        answerListeners()
+        myLogic.answerListeners()
       }
   }
 
   var toArray = function(arrayLike) {
     return [].slice.call(arrayLike, 0)
   }
-  
+
   function onPlayerStateChange(event) {
     var currentIndex = player.getPlaylistIndex()
 

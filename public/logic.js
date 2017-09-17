@@ -1,10 +1,11 @@
 /* global: location, sessionStorage */
-// (function myLogic() {
-var path = location.pathname.slice(1)
+var myLogic = (
+  function() {
+    var path = location.pathname.slice(1)
 
-var toArray = function(arrayLike) {
-  return [].slice.call(arrayLike, 0)
-}
+    var toArray = function(arrayLike) {
+      return [].slice.call(arrayLike, 0)
+    }
 
 function buttonListeners() {
 
@@ -98,4 +99,8 @@ var navigateToNextQuestion = function(previous) {
   }
   window.location.pathname= '/' + next
 }
-// })()
+
+return {
+  answerListeners : answerListeners
+}
+})()
