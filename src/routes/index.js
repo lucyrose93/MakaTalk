@@ -2,7 +2,6 @@ module.exports = [
   './select-survey',
   './confirm-survey',
   './consent',
-  './instructions',
   './today',
   './last-week',
   './family',
@@ -19,6 +18,6 @@ module.exports = [
   './login',
   './results',
   './static',
-  './storage-cleared', 
+  './storage-cleared',
   './information'
 ].map(require)
