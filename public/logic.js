@@ -1,154 +1,106 @@
 /* global: location, sessionStorage */
+var myLogic = (
+  function() {
+    var path = location.pathname.slice(1)
 
-(function collectAnswers () {
-  var path = location.pathname.slice(1)
+    var toArray = function(arrayLike) {
+      return [].slice.call(arrayLike, 0)
+    }
 
-  // select survey type
+function buttonListeners() {
+
   if (path === 'select-survey') {
-    var preSession = document.getElementById('pre-session-button')
-    preSession.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'pre-session')
-      window.location.pathname = "/confirm-survey"
-    })
-
-    var postSession = document.getElementById('post-session-button')
-    postSession.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'post-session')
-      window.location.pathname = "/confirm-survey"
+    var buttonsArr = toArray(document.querySelectorAll("button[id]"))
+    buttonsArr.forEach(function (item) {
+      item.addEventListener('click', function () {
+        sessionStorage.setItem(path, item.textContent)
+        navigateToNextQuestion(path)
+      })
     })
   }
 
-  if (path === 'confirm-survey'){
-    var confirmButton = document.getElementById('confirm-survey-button')
-    confirmButton.addEventListener('click', function () {
-      window.location.pathname = "/consent"
+  if (path === 'confirm-survey' || path === 'thank-you') {
+    var myButton = toArray(document.querySelectorAll('button'))
+    myButton[0].addEventListener('click', function () {
+      navigateToNextQuestion(path)
     })
   }
 
-  // obtain consent
-  if (path === 'consent') {
+  if(path === 'login') {
+    var myButton = document.getElementById('submit-login-button')
+    //E-mail validation in the future refactoring
+    myButton.addEventListener('click', function () {
+    sessionStorage.setItem('e-mail', JSON.stringify(document.getElementById('clinician-email-input').value))
+    navigateToNextQuestion(path)
+    })
+  }
+}
+
+buttonListeners();
+
+function answerListeners() {
+  var pathsArr = ['understand', 'like', 'help', 'come-again', 'today', 'last-week', 'friends', 'family', 'school', 'play', 'next-week']
+  var answersArr = toArray(document.querySelectorAll("figure[id]"))
+
+    if (pathsArr.indexOf(path.toString()) !== -1) {
+    answersArr.forEach(function (item) {
+      item.addEventListener('click', function () {
+        item.classList.add("highlighted-option")
+        sessionStorage.setItem(path, item.lastElementChild.textContent.toLowerCase())
+        navigateToNextQuestion(path)
+      })
+    })
+  }
+
+  if(path === 'consent') {
     var survey = sessionStorage.getItem('select-survey')
-    var yesConsent = document.getElementById('yes-consent')
-    yesConsent.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'yes')
-      if (survey==='pre-session') {
+
+    answersArr[1].addEventListener('click', function () {
+      answersArr[1].classList.add("highlighted-option")
+      sessionStorage.setItem(path, answersArr[1].lastElementChild.textContent.toLowerCase())
+        window.location.pathname = "/thank-you"
+    })
+
+    answersArr[0].addEventListener('click', function () {
+      answersArr[0].classList.add("highlighted-option")
+      sessionStorage.setItem(path, answersArr[0].lastElementChild.textContent.toLowerCase())
+      if (survey === 'pre-session') {
         window.location.pathname = "/today"
       } else {
         window.location.pathname = "/understand"
-      }
-    })
-    var noConsent = document.getElementById('no-consent')
-    noConsent.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'no')
-      window.location.pathname = '/thank-you'
-    })
+        }
+      })
   }
+}
 
-  if (path==='thank-you'){
-    var okSubmit = document.getElementById('submit-survey-button')
-    okSubmit.addEventListener('click', function(){
-      window.location.pathname = '/login'
-    })
+var nextQuestion = {
+['select-survey']: 'confirm-survey',
+['confirm-survey']  : 'consent',
+  understand: 'help',
+  help: 'like',
+  like: 'come-again',
+  ['come-again']: 'thank-you',
+  today: 'last-week',
+  ['last-week']: 'family',
+  family: 'friends',
+  friends: 'school',
+  school: 'play',
+  play: 'next-week',
+  ['next-week']: 'thank-you',
+  ['thank-you']: 'login',
+  login: 'results'
+}
+
+var navigateToNextQuestion = function(previous) {
+  var next = nextQuestion[previous]
+  if (!next) {
+    window.location.pathname='/not-found'
+    return
   }
+  window.location.pathname= '/' + next
+}
 
-  if (path==='login'){
-    var submitLoginDetails = document.getElementById('submit-login-button')
-    submitLoginDetails.addEventListener('click', function(){
-      var clinicianEmail = document.getElementById('clinician-email-input').value
-      sessionStorage.setItem('clinician-email', clinicianEmail)
-      window.location.pathname = '/results'
-    })
-  }
-
-  // pre-session responses
-  if (path === 'today' ||
-    path === 'last-week' ||
-    path === 'home' ||
-    path === 'friends' ||
-    path === 'family' ||
-    path === 'school' ||
-    path === 'play' ||
-    path === 'next-week') {
-    var veryGood = document.getElementById('very-good-option')
-    veryGood.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'very good')
-      nextQuestion()
-    })
-
-    var good = document.getElementById('good-option')
-    good.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'good')
-      nextQuestion()
-    })
-
-    var ok = document.getElementById('ok-option')
-    ok.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'ok')
-      nextQuestion()
-    })
-
-    var bad = document.getElementById('bad-option')
-    bad.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'bad')
-      nextQuestion()
-    })
-
-    var veryBad = document.getElementById('very-bad-option')
-    veryBad.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'very bad')
-      nextQuestion()
-    })
-  }
-
-  // post-session responses
-  if (path === 'understand' ||
-    path === 'like' ||
-    path === 'help' ||
-    path === 'come-again') {
-
-    var yes = document.getElementById('yes-agree')
-    yes.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'yes')
-      nextQuestion()
-    })
-
-    var no = document.getElementById('no-disagree')
-    no.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'no')
-      nextQuestion()
-    })
-
-    var maybe = document.getElementById('maybe')
-    maybe.addEventListener('click', function () {
-      sessionStorage.setItem(path, 'maybe')
-      nextQuestion()
-    })
-  }
-
-  function nextQuestion() {
-    switch(path){
-          case 'understand': window.location.pathname = "/help"
-            break
-          case 'help': window.location.pathname = "/like"
-            break
-          case 'like': window.location.pathname = "/come-again"
-            break
-          case 'come-again': window.location.pathname = "/thank-you"
-              break
-          case 'today': window.location.pathname = "/last-week"
-              break
-          case 'last-week': window.location.pathname = "family"
-              break
-          case 'family': window.location.pathname = "/friends"
-              break
-          case 'friends': window.location.pathname = "/school"
-                break
-          case 'school': window.location.pathname = "/play"
-                break
-          case 'play': window.location.pathname = "/next-week"
-                break
-          case 'next-week': window.location.pathname = "/thank-you"
-                break
-    }
-  }
+return {
+  answerListeners : answerListeners
+}
 })()
